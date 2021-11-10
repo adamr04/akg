@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/ballroom`,
+  pathPrefix: `/akg`,
   siteMetadata: {
     title: "AKG Ballroom",
     author: {
