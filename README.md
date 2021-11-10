@@ -1,2 +1,2 @@
-# akg
-AKG Schulball Website
+# AKG
+Schulball Website für das Akademische Gymnasium
