@@ -1,17 +1,17 @@
 {
-  "name": "SnapOdds",
-  "description": "SnapOdds website",
+  "name": "Ballroom",
+  "description": "AKG Ballroom Website",
   "version": "1.0.0",
-  "homepage": "https://zeitvertrieb.github.io/fiskaly/",
+  "homepage": "https://zeitvertrieb.github.io/akg/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zeitvertrieb/fiskaly"
+    "url": "https://github.com/zeitvertrieb/akg"
   },
   "bugs": {
-    "url": "https://github.com/zeitvertrieb/fiskaly/issues"
+    "url": "https://github.com/zeitvertrieb/akg/issues"
   },
   "author": "Matthias Grieder <matthias@grieder.info> (https://matthias.grieder.info)",
-  "license": "Apache License 2.0.",
+  "license": "MIT",
   "keywords": [
     "brand",
     "design",

@@ -1,11 +1,11 @@
 module.exports = {
   pathPrefix: `/ballroom`,
   siteMetadata: {
-    title: "Ballroom",
+    title: "AKG Ballroom",
     author: {
       name: `Matthias Grieder`,
     },
-    description: `Ballroom AKG Website`,
+    description: `Ballroom des Akademischen Gymansium Wien`,
     siteUrl: `https://zeitvertrieb.github.io/akg/`,
     social: {
       github: `zeitvertrieb/akg`,
