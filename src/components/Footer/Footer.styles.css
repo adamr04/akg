@@ -1,0 +1,8 @@
+.footer {
+  @apply text-center;
+  @apply p-8;
+}
+
+.copyright {
+  @apply text-sm text-skin-fg-muted;
+}

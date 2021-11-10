@@ -1,0 +1,38 @@
+.hero {
+  @apply flex;
+  @apply min-h-[90vh];
+  @apply relative;
+  @apply bg-skin-primary;
+  @apply text-white;
+}
+
+.hero > * {
+  @apply relative z-10;
+}
+
+.hero > section {
+  @apply max-w-screen-md;
+}
+
+.hero p.lead {
+  @apply text-center font-display font-bold text-3xl;
+  @apply mt-16;
+}
+
+.hero p {
+  @apply sm:text-lg lg:text-2xl;
+  @apply max-w-screen-md;
+  @apply mx-auto;
+}
+
+.heroBackground {
+  @apply absolute z-0 overflow-hidden;
+  @apply inset-0;
+  @apply opacity-80;
+}
+
+.heroBackground > img {
+  @apply absolute z-0;
+  @apply min-h-full w-auto;
+  @apply object-cover;
+}

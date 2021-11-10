@@ -1,0 +1,51 @@
+.headerWrapper {
+  @apply sticky top-0 z-20;
+  @apply bg-skin-header;
+  @apply transition duration-300 ease-in-out;
+}
+
+.headerWrapper.sticky {
+  @apply shadow-lg;
+}
+
+.header {
+  @apply max-w-screen-xl;
+  @apply mx-auto;
+  @apply flex items-center;
+  @apply px-4 py-6;
+  @apply text-current;
+}
+
+.header__left,
+.header__right {
+  @apply flex items-center;
+  @apply lg:w-1/5;
+}
+
+.header__center {
+  @apply flex items-center;
+  @apply mx-auto;
+}
+.header__right {
+  @apply justify-end;
+}
+.header__right > * {
+  @apply ml-2;
+}
+
+.brand {
+  @apply border-transparent hover:border-transparent;
+}
+
+.header--mobile {
+  @apply lg:hidden;
+  @apply z-50 absolute top-0;
+  @apply inset-x-0;
+  @apply p-2;
+  @apply transition transform origin-top-right;
+}
+
+.header--mobile .brand {
+  @apply text-skin-fg;
+  @apply order-1;
+}

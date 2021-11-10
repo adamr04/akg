@@ -1,0 +1,14 @@
+.logo {
+  @apply flex flex-col;
+  @apply space-y-1 py-2;
+  @apply transition-all;
+  @apply focus:bg-skin-focus focus:text-skin-fg-focus focus:outline-none;
+}
+
+.logo em {
+  @apply font-display font-semibold not-italic text-3xl text-current;
+}
+
+.logo small {
+  @apply text-xs;
+}

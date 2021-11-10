@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@import './font.css';
+
+@layer base {
+  html,
+  body {
+    @apply bg-skin-base text-skin-fg;
+  }
+
+  :root {
+    --color-primary: #46b;
+    --color-primary-tint: #7190dd;
+    --color-primary-shade: #46b;
+    --color-primary-contrast: var(--color-primary-shade);
+    --color-background: #f5f6fa;
+    --color-background-muted: #e7e5fd;
+    --color-background-flash: #ffffff;
+    --color-header-background: 255, 255, 255;
+    --color-text: #101010;
+    --color-text-muted: #545B6F;
+    --color-focus: #ffdd00;
+    --color-text-focus: #000000;
+  }
+
+  .dark {
+    --color-primary-contrast: var(--color-primary-tint);
+    --color-background: #0c0e14;
+    --color-background-muted: #333e48;
+    --color-background-flash: #000;
+    --color-header-background: 0, 0, 0;
+    --color-text: #fff;
+    --color-text-muted: #b8bec6;
+  }
+}
+
+@layer utilities {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none !important;
+  }
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    background: transparent !important;
+  }
+}
+
+*:not(#gatsby-focus-wrapper):focus {
+  --color-primary: var(--color-text-focus);
+  @apply focus:outline-none;
+  @apply focus:opacity-100;
+  @apply focus:ring-2 focus:ring-skin-focus;
+  @apply focus:bg-skin-focus focus:text-skin-fg-focus;
+}
+*:not(#gatsby-focus-wrapper):focus {
+  @apply focus:outline-none;
+  @apply focus:opacity-100;
+  @apply focus:ring-2 focus:ring-skin-focus;
+  @apply focus:bg-skin-focus focus:text-skin-fg-focus;
+}
+
+a, .prose a {
+  @apply text-skin-primary-text;
+  @apply border-b border-transparent;
+  @apply transition-all no-underline;
+  @apply hover:text-current hover:cursor-pointer hover:border-current;
+}
+
+p {
+  @apply my-4;
+}
+
+h1, .h1 {
+  @apply font-display;
+  @apply font-semibold;
+  @apply tracking-tight;
+  @apply text-5xl sm:text-6xl lg:text-8xl;
+  @apply mt-8 mb-6;
+}
+
+h2, .h2 {
+  @apply font-display;
+  @apply font-bold;
+  @apply tracking-tight;
+  @apply text-2xl sm:text-3xl lg:text-4xl;
+}
+
+.prose {
+  @apply text-current;
+}

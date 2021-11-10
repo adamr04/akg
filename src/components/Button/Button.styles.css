@@ -1,0 +1,13 @@
+.btn {
+  @apply rounded-full;
+  @apply p-2;
+  @apply inline-flex items-center justify-center;
+  @apply font-display font-semibold text-lg text-current;
+  @apply border border-opacity-0 hover:border-opacity-100;
+  @apply transition-all;
+}
+
+.btn.primary {
+  @apply bg-skin-base-muted;
+  @apply text-skin-fg;
+}
