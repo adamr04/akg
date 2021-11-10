@@ -3,6 +3,11 @@
   @apply p-8;
 }
 
+.footer nav {
+  @apply mx-auto;
+  @apply justify-center;
+}
+
 .copyright {
   @apply text-sm text-skin-fg-muted;
 }

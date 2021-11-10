@@ -11,10 +11,12 @@ const NotFoundPage: React.FC<PageProps> = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="404: Not Found" />
       <Hero title="Sorry.">
-        <p>Es scheint als ist diese Seite auf Urlaub.</p>
-        <Button as="link" to="/">
-          Zurück zu Home
-        </Button>
+        <p className="text-center">Es scheint als ist diese Seite auf Urlaub.</p>
+        <p className="text-center">
+          <Button as="link" to="/">
+            Zurück zu Home
+          </Button>
+        </p>
       </Hero>
     </Layout>
   );

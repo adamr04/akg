@@ -106,6 +106,7 @@ module.exports = {
           "0 50px 100px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%)",
       },
       fontFamily: {
+        sans: ["Josefin Sans", ...defaultTheme.fontFamily.sans],
         display: ["Playfair Display", ...defaultTheme.fontFamily.sans],
       },
       gridTemplateColumns: {

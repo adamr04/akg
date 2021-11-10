@@ -10,5 +10,5 @@
 }
 
 .logo small {
-  @apply text-xs;
+  @apply text-sm;
 }

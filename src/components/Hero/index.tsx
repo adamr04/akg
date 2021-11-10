@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({
               {date} — {location}
             </p>
           </section>
-          <section className="py-16 text-center mx-auto">{children}</section>
+          <section>{children}</section>
         </Container>
       </div>
     </>

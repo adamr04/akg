@@ -27,8 +27,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
         </p>
       </Hero>
       <Container>
-        <h2 className="my-8 pt-8">News</h2>
-        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 -mx-4">
+        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 -mx-4 mt-4">
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug;
             return (
