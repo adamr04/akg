@@ -10,7 +10,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Explore the Fiskaly Design System" />
+      <Seo title="Der 43. Schulball des Akademischen Gymnasiums Wien" />
       <Hero
         title="Casino Royale"
         date="20. Mai 2022"
