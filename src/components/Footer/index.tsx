@@ -8,7 +8,7 @@ const navigation = {
   links: [
     { name: "Home", to: "/" },
     { name: "Archiv", to: "/archives" },
-    { name: "Privatsphäre", to: "/privacy" },
+    { name: "Datenschutz", to: "/privacy" },
   ],
 };
 

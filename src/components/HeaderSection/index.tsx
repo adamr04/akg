@@ -20,10 +20,10 @@ export const HeaderSection: React.FC<HeaderSectionProps> = ({
       <div className="header-section">
         <Container>
           <section>
-            <h1 className="title" itemProp="headline">{title}</h1>
-            <p className="lead">
-              {copy}
-            </p>
+            <h1 className="title" itemProp="headline">
+              {title}
+            </h1>
+            <p className="lead">{copy}</p>
           </section>
           <section>{children}</section>
         </Container>

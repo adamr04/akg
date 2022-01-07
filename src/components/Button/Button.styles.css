@@ -1,10 +1,14 @@
 .btn {
   @apply rounded-full;
-  @apply p-2;
+  @apply py-3 px-6;
   @apply inline-flex items-center justify-center;
-  @apply font-display font-semibold text-lg text-current;
+  @apply font-sans font-semibold text-lg text-current;
   @apply border border-opacity-0 hover:border-opacity-100;
   @apply transition-all;
+}
+
+.--icon {
+  @apply py-2 px-2;
 }
 
 .btn.primary {

@@ -61,7 +61,6 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             order
-            date(formatString: "MMMM DD, YYYY")
             title
             description
             tags

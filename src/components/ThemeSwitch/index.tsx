@@ -15,7 +15,12 @@ export const ThemeSwitch: React.FC<EmptyProps> = () => {
     }
   };
   return (
-    <Button as="button" styleType="default" onClick={changeTheme}>
+    <Button
+      as="button"
+      styleType="default"
+      onClick={changeTheme}
+      className="--icon"
+    >
       {isDark ? (
         <>
           <SunIcon className="h-6 w-6" aria-hidden="true" />

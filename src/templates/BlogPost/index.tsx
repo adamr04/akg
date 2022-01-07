@@ -39,20 +39,18 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             <MDXRenderer>{post.body}</MDXRenderer>
           </section>
         </article>
-        <nav className="mt-24 pt-16 grid grid-cols-blog border-t border-skin-base-muted">
+        <nav className="mt-16 py-8 grid grid-cols-blog border-t border-skin-base-muted">
           <ul className="col-start-2 text-lg flex flex-wrap justify-between">
             <li>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev" className="py-2">
-                  ← <span>{previous.frontmatter.order}.</span>{" "}
-                  {previous.frontmatter.title}
+                  ← {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
                 <Link to={next.fields.slug} rel="next" className="py-2">
-                  <span>{next.frontmatter.order}.</span>{" "}
                   {next.frontmatter.title} →
                 </Link>
               )}
@@ -83,8 +81,8 @@ export const pageQuery = graphql`
       body
       frontmatter {
         order
+        type
         title
-        date(formatString: "MMMM DD, YYYY")
         description
       }
     }

@@ -1,3 +1,7 @@
+.article {
+  @apply mb-8;
+}
+
 .article a,
 .article pre,
 .article code,

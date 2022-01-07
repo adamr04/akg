@@ -1,11 +1,13 @@
 .footer {
   @apply text-center;
-  @apply p-8;
+  @apply p-4;
 }
 
 .footer nav {
+  @apply pt-6;
   @apply mx-auto;
   @apply justify-center;
+  @apply border-t border-skin-base-muted;
 }
 
 .copyright {

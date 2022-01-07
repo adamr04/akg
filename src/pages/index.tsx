@@ -57,7 +57,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___order], order: ASC }) {
+    allMdx(
+      filter: { frontmatter: { type: { eq: "article" } } }
+      sort: { fields: [frontmatter___order], order: ASC }
+    ) {
       totalCount
       edges {
         node {
@@ -67,7 +70,6 @@ export const pageQuery = graphql`
           }
           frontmatter {
             order
-            date(formatString: "MMMM DD, YYYY")
             title
             description
             tags

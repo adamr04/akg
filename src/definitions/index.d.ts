@@ -1,13 +1,5 @@
 import { Location } from "history";
 
-export interface MdxProps {
-  colorCode?: string;
-  colorName?: string;
-  colorHEX?: string;
-  colorHEXDark: string;
-  colors?: sting[];
-}
-
 interface EmptyProps {}
 
 interface ListProps {
@@ -26,7 +18,6 @@ interface ArticleCardProps {
   order?: number;
   description?: any;
   tags?: keyof JSX.IntrinsicElements | string;
-  date?: string;
 }
 
 interface PageProps {
@@ -35,6 +26,7 @@ interface PageProps {
     previous: INode;
     next: INode;
     tag: INode;
+    type: INode;
     slug: INode;
     allMdx: {
       totalCount: INode;
@@ -78,22 +70,22 @@ interface INode {
   };
   frontmatter: {
     order: number;
-    date: string;
     title: string;
+    type: string;
     tags?: string;
     description: string;
   };
 }
 
 export interface FormField {
-  type: string
-  name: string
-  label?: string
-  initial: string
-  className?: string
-  element: 'input' | 'textarea'
+  type: string;
+  name: string;
+  label?: string;
+  initial: string;
+  className?: string;
+  element: "input" | "textarea";
 }
 
-export type FormDataState = { [key: string]: string }
+export type FormDataState = { [key: string]: string };
 
-export type FormSubmitState = 'INITIAL' | 'SUBMITTING' | 'SUCCESS' | 'ERROR'
+export type FormSubmitState = "INITIAL" | "SUBMITTING" | "SUCCESS" | "ERROR";

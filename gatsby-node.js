@@ -14,13 +14,56 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  // Define a template for blog post
-  const blogPostTemplate = path.resolve(`./src/templates/BlogPost/index.tsx`);
-  // Get all markdown blog posts sorted by date
-  const result = await graphql(
+  // Define a template for page
+  const pageTemplate = path.resolve(`./src/templates/Page/index.tsx`);
+  // Get all markdown pages
+  const resultPage = await graphql(
     `
       {
         allMdx(
+          filter: { frontmatter: { type: { eq: "page" } } }
+          sort: { fields: [frontmatter___order], order: ASC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              id
+              slug
+            }
+          }
+        }
+      }
+    `
+  );
+  // Create pages
+  const pages = resultPage.data.allMdx.edges;
+  if (pages.length > 0) {
+    pages.forEach((page, index) => {
+      createPage({
+        path: page.node.slug,
+        component: pageTemplate,
+        context: {
+          id: page.node.id,
+        },
+      });
+    });
+  }
+  if (resultPage.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading the articles.`,
+      resultPage.errors
+    );
+    return;
+  }
+  ///////////////////////////////////////
+  // Define a template for blog post
+  const blogPostTemplate = path.resolve(`./src/templates/BlogPost/index.tsx`);
+  // Get all markdown blog posts sorted by date
+  const resultPosts = await graphql(
+    `
+      {
+        allMdx(
+          filter: { frontmatter: { type: { eq: "article" } } }
           sort: { fields: [frontmatter___order], order: ASC }
           limit: 1000
         ) {
@@ -37,17 +80,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     `
   );
-
-  if (result.errors) {
+  if (resultPosts.errors) {
     reporter.panicOnBuild(
       `There was an error loading the articles.`,
-      result.errors
+      resultPosts.errors
     );
     return;
   }
-
   // Create blog posts pages
-  const posts = result.data.allMdx.edges;
+  const posts = resultPosts.data.allMdx.edges;
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].node.id;
@@ -69,8 +110,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const tagTemplate = path.resolve(`./src/templates/TagPage/index.tsx`);
   // Create tag pages
   const tags = {};
-
-  result.data.allMdx.edges
+  resultPosts.data.allMdx.edges
     .filter(({ node }) => node.frontmatter.tags)
     .forEach(({ node }) => {
       const tagsList = node.frontmatter.tags
@@ -148,7 +188,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       tags: String
-      date: Date @dateformat
     }
 
     type Fields {
