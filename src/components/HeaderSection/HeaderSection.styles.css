@@ -1,0 +1,26 @@
+.header-section {
+  @apply flex;
+  @apply relative;
+  @apply py-8;
+}
+
+.header-section > section {
+  @apply max-w-screen-md;
+}
+
+.header-section section + section {
+  @apply mt-16;
+}
+
+.header-section .title {
+  @apply text-3xl lg:text-4xl;
+  @apply text-center;
+  @apply leading-snug;
+  @apply max-w-screen-md;
+  @apply mx-auto;
+}
+
+.header-section p.lead {
+  @apply text-center;
+  @apply font-display font-bold text-lg;
+}

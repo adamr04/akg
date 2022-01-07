@@ -29,7 +29,7 @@ export const Header: React.FC<EmptyProps> = () => {
   }, [top]);
 
   return (
-    <Popover className={`headerWrapper ${!top && "sticky"}`}>
+    <Popover className={`headerWrapper ${!top && "keep"}`}>
       <header className="header">
         <div className="header__left">
           <Link to="/" className="brand">

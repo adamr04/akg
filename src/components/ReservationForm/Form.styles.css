@@ -1,0 +1,51 @@
+.form {
+  @apply grid grid-cols-1 gap-6;
+  @apply max-w-screen-sm;
+  @apply mx-auto;
+}
+
+.form button {
+  @apply rounded-full;
+  @apply py-3 px-6;
+  @apply inline-flex items-center justify-center;
+  @apply bg-skin-primary;
+  @apply text-white;
+  @apply font-sans font-semibold text-2xl;
+  @apply border border-opacity-0 hover:border-opacity-100;
+  @apply transition-all;
+}
+
+.form label {
+  @apply block;
+  @apply font-medium;
+}
+
+.form label input,
+.form label textarea {
+  @apply mt-2;
+  @apply block;
+  @apply w-full;
+  @apply px-0;
+  @apply text-xl;
+  @apply font-semibold;
+  @apply bg-transparent;
+  @apply border-0 border-b-2 border-skin-base-muted;
+  @apply focus:ring-0 focus:border-skin-fg;
+}
+
+.form label input[type=hidden] {
+  @apply hidden;
+}
+
+.feedback {
+  @apply flex items-center justify-center;
+  @apply bg-rose-600;
+  @apply text-white;
+  @apply rounded-lg;
+  @apply p-8;
+}
+
+.feedback > p {
+  @apply text-xl;
+  @apply font-semibold;
+}

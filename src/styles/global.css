@@ -51,20 +51,6 @@
   }
 }
 
-*:not(#gatsby-focus-wrapper):focus {
-  --color-primary: var(--color-text-focus);
-  @apply focus:outline-none;
-  @apply focus:opacity-100;
-  @apply focus:ring-2 focus:ring-skin-focus;
-  @apply focus:bg-skin-focus focus:text-skin-fg-focus;
-}
-*:not(#gatsby-focus-wrapper):focus {
-  @apply focus:outline-none;
-  @apply focus:opacity-100;
-  @apply focus:ring-2 focus:ring-skin-focus;
-  @apply focus:bg-skin-focus focus:text-skin-fg-focus;
-}
-
 a, .prose a {
   @apply text-skin-primary-text;
   @apply border-b border-transparent;

@@ -14,7 +14,6 @@
   @apply py-2;
   @apply font-display font-semibold text-lg;
   @apply transition-all;
-  @apply focus:bg-skin-focus focus:text-skin-fg-focus focus:outline-none;
 }
 
 .navLink[aria-current]:not([aria-current="false"]) {
