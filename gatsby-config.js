@@ -87,7 +87,6 @@ module.exports = {
               return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.slug,
                   custom_elements: [{ "content:encoded": edge.node.html }],
@@ -108,7 +107,6 @@ module.exports = {
                       frontmatter {
                         order
                         title
-                        date
                       }
                     }
                   }
@@ -116,7 +114,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "SnapOdds RSS feed",
+            title: "AKG RSS feed",
           },
         ],
       },

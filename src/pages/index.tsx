@@ -37,7 +37,6 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
                   title={title}
                   description={node.frontmatter.description}
                   tags={node.frontmatter.tags}
-                  date={node.frontmatter.date}
                 />
               </li>
             );
