@@ -7,7 +7,12 @@
 
 .form h2 {
   @apply px-8;
+  @apply mt-8;
   @apply font-sans text-3xl;
+}
+.form h2 + p {
+  @apply text-lg;
+  @apply px-8;
 }
 
 .item {
@@ -27,7 +32,6 @@
   @apply bg-skin-base-flash;
   @apply text-skin-primary;
   @apply font-sans font-semibold text-2xl;
-  @apply border border-opacity-0 hover:border-opacity-100;
   @apply transition-all;
 }
 

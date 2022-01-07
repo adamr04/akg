@@ -26,7 +26,7 @@ const formConfig: FormField[] = [
     initial: "+43 ",
     label: "Telefon",
     placeholder: "+43 007",
-    name: "+43 007",
+    name: "Telefon",
     type: "tel",
     element: "input",
   },
@@ -34,7 +34,7 @@ const formConfig: FormField[] = [
     initial: "",
     label: "Nachricht",
     placeholder: "Falls Sie Fragen haben...",
-    name: "Message",
+    name: "Nachricht",
     type: "text",
     element: "textarea",
   },
@@ -90,7 +90,10 @@ export const ReservationForm = () => {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
-      <div><h2>Ihre Kontaktdaten</h2></div>
+      <div>
+        <h2>Ihre Kontaktdaten</h2>
+        <p>Bitte nutzen Sie folgendes Formular. Alle eingegebenen Daten unterliegen dem Datenschutzgesetz und werden nach dem Schulball gelöscht.</p>
+      </div>
       <section className="item">
         {formConfig.map(({ name, label, placeholder, element, type, className }) => {
           return (
@@ -110,13 +113,17 @@ export const ReservationForm = () => {
           );
         })}
       </section>
-      <div><h2>Meine Karten</h2></div>
+      <div>
+        <h2>Meine Karten</h2>
+        <p>Aufgrund der aktuellen Covid-19 Bestimmungen, müssen die Karten personalisiert sein.</p>
+      </div>
       {fields.map((field, idx) => {
         return (
           <section className="item" key={`${field}-${idx}`}>
             <label>
               <span>Personalisierte Karte für</span>
               <input
+                name={`Gast-${idx}`}
                 type="text"
                 placeholder="Vorname Nachname"
                 onChange={e => handleChange(idx, e)}
