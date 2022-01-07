@@ -128,7 +128,7 @@ module.exports = {
         short_name: `Ballroom`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#2DD4BF`,
+        theme_color: `#ffcb00`,
         display: `minimal-ui`,
         icon: `src/images/akg-icon.png`, // This path is relative to the root of the site.
       },

@@ -24,11 +24,18 @@
   @apply rounded-full;
   @apply py-3 px-6;
   @apply inline-flex items-center justify-center;
-  @apply bg-skin-primary;
-  @apply text-white;
+  @apply bg-skin-base-flash;
+  @apply text-skin-primary;
   @apply font-sans font-semibold text-2xl;
   @apply border border-opacity-0 hover:border-opacity-100;
   @apply transition-all;
+}
+
+.form button.addItem {
+  @apply p-8;
+  @apply rounded-xl;
+  @apply transition-all;
+  @apply hover:shadow-xl;
 }
 
 .form button.removeItem {
@@ -40,14 +47,14 @@
 }
 
 .form button[type=submit] {
-  @apply bg-green-700;
+  @apply bg-skin-primary;
+  @apply text-white;
 }
 
 .form button[type=submit] svg {
   @apply animate-spin;
   @apply -ml-1 mr-3;
   @apply h-6 w-6;
-  @apply text-white;
 }
 
 .form label {

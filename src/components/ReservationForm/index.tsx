@@ -110,12 +110,12 @@ export const ReservationForm = () => {
           );
         })}
       </section>
-      <div><h2>Personalisierte Karten</h2></div>
+      <div><h2>Meine Karten</h2></div>
       {fields.map((field, idx) => {
         return (
           <section className="item" key={`${field}-${idx}`}>
             <label>
-              <span>Name</span>
+              <span>Personalisierte Karte für</span>
               <input
                 type="text"
                 placeholder="Vorname Nachname"
@@ -142,9 +142,9 @@ export const ReservationForm = () => {
           </section>
         );
       })}
-      <button type="button" onClick={() => handleAdd()}>
+      <button type="button" className="addItem" onClick={() => handleAdd()}>
         <PlusIcon className="h-6 w-6 -mt-1 mr-3" aria-hidden="true" />
-        <span>Person</span>
+        <span>Person hinzufügen</span>
       </button>
       <input type="hidden" name="form-name" value="reservation" />
       <button type="submit">
