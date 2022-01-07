@@ -33,7 +33,6 @@ const TagPageTemplate: React.FC<PageProps> = ({
                   order={node.frontmatter.order}
                   description={node.frontmatter.description}
                   tags={node.frontmatter.tags}
-                  date={node.frontmatter.date}
                 />
               </li>
             );
