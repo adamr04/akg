@@ -63,7 +63,7 @@ p {
 }
 
 h1, .h1 {
-  @apply font-display;
+  @apply font-sans;
   @apply font-semibold;
   @apply tracking-tight;
   @apply text-5xl sm:text-6xl lg:text-7xl;

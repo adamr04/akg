@@ -53,27 +53,27 @@ export const ReservationForm = () => {
     useFormSubmission(formConfig);
 
   const [checked, setChecked] = React.useState(true);
-  const [fields, setFields] = useState([{ value: null }]);
 
-  function handleChange(i, event) {
-    const values = [...fields];
-    values[i].value = event.target.value;
-    setFields(values);
-  }
+  const [inputList, setInputList] = React.useState([{ name: "", type: "" }]);
+  // handle input change
+  const handleInputChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...inputList];
+    list[index][name] = value;
+    setInputList(list);
+  };
+  // handle click event of the Remove button
+  const handleRemoveClick = (index) => {
+    const list = [...inputList];
+    list.splice(index, 1);
+    setInputList(list);
+  };
+  // handle click event of the Add button
+  const handleAddClick = () => {
+    setInputList([...inputList, { name: "", type: "" }]);
+  };
 
-  function handleAdd() {
-    const values = [...fields];
-    values.push({ value: null });
-    setFields(values);
-  }
-
-  function handleRemove(i) {
-    const values = [...fields];
-    values.splice(i, 1);
-    setFields(values);
-  }
-
-  console.log(fields)
+  console.log(inputList);
 
   if (formState === "SUCCESS") {
     return (
@@ -92,67 +92,141 @@ export const ReservationForm = () => {
     >
       <div>
         <h2>Ihre Kontaktdaten</h2>
-        <p>Bitte nutzen Sie folgendes Formular. Alle eingegebenen Daten unterliegen dem Datenschutzgesetz und werden nach dem Schulball gelöscht.</p>
+        <p>
+          Bitte nutzen Sie folgendes Formular. Alle eingegebenen Daten
+          unterliegen dem Datenschutzgesetz und werden nach dem Schulball
+          gelöscht.
+        </p>
       </div>
       <section className="item">
-        {formConfig.map(({ name, label, placeholder, element, type, className }) => {
-          return (
-            <label>
-              <span>{label}</span>
-              {React.createElement(element, {
-                key: name,
-                type,
-                name,
-                label: name,
-                value: fieldsState[name],
-                onChange: updateField,
-                placeholder: placeholder,
-                className,
-              })}
-            </label>
-          );
-        })}
+        {formConfig.map(
+          ({ name, label, placeholder, element, type, className }) => {
+            return (
+              <label key={name}>
+                <span>{label}</span>
+                {React.createElement(element, {
+                  key: name,
+                  type,
+                  name,
+                  label: name,
+                  value: fieldsState[name],
+                  onChange: updateField,
+                  placeholder: placeholder,
+                  className,
+                })}
+              </label>
+            );
+          }
+        )}
       </section>
       <div>
         <h2>Meine Karten</h2>
-        <p>Aufgrund der aktuellen Covid-19 Bestimmungen, müssen die Karten personalisiert sein.</p>
+        <p>
+          Aufgrund der aktuellen Covid-19 Bestimmungen, müssen die Karten
+          personalisiert sein.
+        </p>
       </div>
-      {fields.map((field, idx) => {
+      {inputList.map((x, i) => {
         return (
-          <section className="item" key={`${field}-${idx}`}>
+          <>
+            <section className="item" key={i}>
+              <label>
+                <span>Personalisierte Karte für</span>
+                <input
+                  name="name"
+                  placeholder="Vorname Nachname"
+                  value={x.name}
+                  type="text"
+                  onChange={(e) => handleInputChange(e, i)}
+                />
+              </label>
+
+              {inputList.length !== 1 && (
+                <button
+                  className="removeItem"
+                  onClick={() => handleRemoveClick(i)}
+                >
+                  <span className="sr-only">Person entfernen</span>
+                  <XIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
+              )}
+              <div className="flex flex-col md:flex-row md:items-center md:space-x-8">
+                <label className="--inline">
+                  <input
+                    type="radio"
+                    value="Schüler"
+                    name={`type-${i}`}
+                    defaultChecked={checked}
+                    className="border-skin-base-muted border-2 focus:border-skin-primary"
+                  />
+                  <span>Schüler*in</span>
+                </label>
+                <label className="--inline">
+                  <input
+                    type="radio"
+                    value="Regulär"
+                    name={`type-${i}`}
+                    className="border-skin-base-muted border-2 focus:border-skin-primary"
+                  />
+                  <span>Regulärer Gast</span>
+                </label>
+                <label className="--inline">
+                  <input
+                    type="checkbox"
+                    className="border-skin-base-muted border-2 focus:border-skin-primary"
+                  />
+                  <span>Tisch Sitzplatz</span>
+                </label>
+              </div>
+            </section>
+            {inputList.length - 1 === i && (
+              <button
+                type="button"
+                className="addItem"
+                onClick={handleAddClick}
+              >
+                <PlusIcon className="h-6 w-6 -mt-1 mr-3" aria-hidden="true" />
+                <span>Person hinzufügen</span>
+              </button>
+            )}
+          </>
+        );
+      })}
+      {/*
+      {inputList.map((x, i) => {
+        return (
+          <section className="item" key={i}>
             <label>
               <span>Personalisierte Karte für</span>
               <input
-                name={`Gast-${idx}`}
+                name={`Gast-${i}`}
                 type="text"
                 placeholder="Vorname Nachname"
-                onChange={e => handleChange(idx, e)}
+                value={x.name}
+                onChange={e => handleInputChange(e, i)}
               />
             </label>
             <div className="flex flex-col md:flex-row md:items-center md:space-x-8">
               <label className="--inline">
-                <input defaultChecked={checked} type="radio" name={`type-${idx}`} className="border-skin-base-muted border-2 focus:border-skin-primary" />
+                <input type="radio" value={x.type} name={`type-${i}`} defaultChecked={checked} className="border-skin-base-muted border-2 focus:border-skin-primary" />
                 <span>Schüler*in</span>
               </label>
               <label className="--inline">
-                <input type="radio" name={`type-${idx}`} className="border-skin-base-muted border-2 focus:border-skin-primary" />
+                <input type="radio" value={x.type} name={`type-${i}`} className="border-skin-base-muted border-2 focus:border-skin-primary" />
                 <span>Regulärer Gast</span>
               </label>
               <label className="--inline">
-                <input type="checkbox" name={`table-${idx}`} className="border-skin-base-muted border-2 focus:border-skin-primary" />
+                <input type="checkbox" value={x.table} name={`table-${i}`} className="border-skin-base-muted border-2 focus:border-skin-primary" />
                 <span>Tisch Sitzplatz</span>
               </label>
             </div>
-            <button type="button" className="removeItem" onClick={() => handleRemove(idx)}>
+            <button type="button" className="removeItem" onClick={() => handleRemoveClick(i)}>
               <XIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </section>
         );
       })}
-      <button type="button" className="addItem" onClick={() => handleAdd()}>
-        <PlusIcon className="h-6 w-6 -mt-1 mr-3" aria-hidden="true" />
-        <span>Person hinzufügen</span>
-      </button>
+      */}
       <input type="hidden" name="form-name" value="reservation" />
       <button type="submit">
         {formState === "SUBMITTING" ? (
@@ -176,7 +250,7 @@ export const ReservationForm = () => {
             ></path>
           </svg>
         ) : (
-          <span>Karten ({fields.length}) bestellen</span>
+          <span>Karten ({inputList.length}) bestellen</span>
         )}
       </button>
       {formState === "SUBMITTING" && (
