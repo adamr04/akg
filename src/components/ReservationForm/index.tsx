@@ -30,6 +30,7 @@ const formConfig: FormField[] = [
     type: "tel",
     element: "input",
   },
+  /*
   {
     initial: "",
     label: "Nachricht",
@@ -38,7 +39,8 @@ const formConfig: FormField[] = [
     type: "text",
     element: "textarea",
   },
-  // { initial: '', name: 'File', type: 'file', element: 'input' },
+  { initial: '', name: 'File', type: 'file', element: 'input' },
+  */
   {
     initial: "",
     name: "bot-field",
@@ -52,7 +54,7 @@ export const ReservationForm = () => {
   const [guestList, setGuestList] = React.useState([{ name: "", type: "" }]);
   const [checked, setChecked] = React.useState(true);
   const { formState, fieldsState, submitForm, updateField } =
-    useFormSubmission(formConfig && guestList);
+    useFormSubmission(formConfig, guestList);
 
   // handle input change
   const handleInputChange = (e, index) => {
@@ -126,7 +128,7 @@ export const ReservationForm = () => {
           personalisiert sein.
         </p>
       </div>
-      {guestList.map((x, i) => {
+      {guestList.map((name, i) => {
         return (
           <>
             <section className="item" key={i}>
@@ -135,12 +137,11 @@ export const ReservationForm = () => {
                 <input
                   name="name"
                   placeholder="Vorname Nachname"
-                  value={x.name}
+                  value={name.name}
                   type="text"
                   onChange={(e) => handleInputChange(e, i)}
                 />
               </label>
-
               {guestList.length !== 1 && (
                 <button
                   className="removeItem"
