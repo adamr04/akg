@@ -50,7 +50,7 @@ const formConfig: FormField[] = [
 
 export const ReservationForm = () => {
   const { formState, fieldsState, submitForm, updateField } =
-    useFormSubmission(formConfig);
+    useFormSubmission(formConfig, inputList);
 
   const [checked, setChecked] = React.useState(true);
 
@@ -115,6 +115,7 @@ export const ReservationForm = () => {
                   className,
                 })}
               </label>
+
             );
           }
         )}
