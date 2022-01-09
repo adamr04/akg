@@ -49,31 +49,30 @@ const formConfig: FormField[] = [
 ];
 
 export const ReservationForm = () => {
-  const { formState, fieldsState, submitForm, updateField } =
-    useFormSubmission(formConfig, inputList);
-
+  const [guestList, setGuestList] = React.useState([{ name: "", type: "" }]);
   const [checked, setChecked] = React.useState(true);
+  const { formState, fieldsState, submitForm, updateField } =
+    useFormSubmission(formConfig && guestList);
 
-  const [inputList, setInputList] = React.useState([{ name: "", type: "" }]);
   // handle input change
   const handleInputChange = (e, index) => {
     const { name, value } = e.target;
-    const list = [...inputList];
+    const list = [...guestList];
     list[index][name] = value;
-    setInputList(list);
+    setGuestList(list);
   };
   // handle click event of the Remove button
   const handleRemoveClick = (index) => {
-    const list = [...inputList];
+    const list = [...guestList];
     list.splice(index, 1);
-    setInputList(list);
+    setGuestList(list);
   };
   // handle click event of the Add button
   const handleAddClick = () => {
-    setInputList([...inputList, { name: "", type: "" }]);
+    setGuestList([...guestList, { name: "", type: "" }]);
   };
 
-  console.log(inputList);
+  console.log(guestList);
 
   if (formState === "SUCCESS") {
     return (
@@ -127,7 +126,7 @@ export const ReservationForm = () => {
           personalisiert sein.
         </p>
       </div>
-      {inputList.map((x, i) => {
+      {guestList.map((x, i) => {
         return (
           <>
             <section className="item" key={i}>
@@ -142,7 +141,7 @@ export const ReservationForm = () => {
                 />
               </label>
 
-              {inputList.length !== 1 && (
+              {guestList.length !== 1 && (
                 <button
                   className="removeItem"
                   onClick={() => handleRemoveClick(i)}
@@ -180,7 +179,7 @@ export const ReservationForm = () => {
                 </label>
               </div>
             </section>
-            {inputList.length - 1 === i && (
+            {guestList.length - 1 === i && (
               <button
                 type="button"
                 className="addItem"
@@ -193,41 +192,6 @@ export const ReservationForm = () => {
           </>
         );
       })}
-      {/*
-      {inputList.map((x, i) => {
-        return (
-          <section className="item" key={i}>
-            <label>
-              <span>Personalisierte Karte für</span>
-              <input
-                name={`Gast-${i}`}
-                type="text"
-                placeholder="Vorname Nachname"
-                value={x.name}
-                onChange={e => handleInputChange(e, i)}
-              />
-            </label>
-            <div className="flex flex-col md:flex-row md:items-center md:space-x-8">
-              <label className="--inline">
-                <input type="radio" value={x.type} name={`type-${i}`} defaultChecked={checked} className="border-skin-base-muted border-2 focus:border-skin-primary" />
-                <span>Schüler*in</span>
-              </label>
-              <label className="--inline">
-                <input type="radio" value={x.type} name={`type-${i}`} className="border-skin-base-muted border-2 focus:border-skin-primary" />
-                <span>Regulärer Gast</span>
-              </label>
-              <label className="--inline">
-                <input type="checkbox" value={x.table} name={`table-${i}`} className="border-skin-base-muted border-2 focus:border-skin-primary" />
-                <span>Tisch Sitzplatz</span>
-              </label>
-            </div>
-            <button type="button" className="removeItem" onClick={() => handleRemoveClick(i)}>
-              <XIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </section>
-        );
-      })}
-      */}
       <input type="hidden" name="form-name" value="reservation" />
       <button type="submit">
         {formState === "SUBMITTING" ? (
@@ -251,7 +215,7 @@ export const ReservationForm = () => {
             ></path>
           </svg>
         ) : (
-          <span>Karten ({inputList.length}) bestellen</span>
+          <span>Karten ({guestList.length}) bestellen</span>
         )}
       </button>
       {formState === "SUBMITTING" && (
