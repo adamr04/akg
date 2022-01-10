@@ -99,7 +99,8 @@
   @apply focus:ring-0 focus:border-skin-fg;
 }
 
-.form label input[type=hidden] {
+.form label input[type=hidden],
+.form label .invisble {
   @apply hidden;
 }
 
