@@ -1,13 +1,12 @@
 .form {
   @apply grid grid-cols-1 gap-6;
   @apply max-w-screen-sm;
-  @apply mx-auto;
+  @apply mx-auto mb-6;
   @apply font-medium;
 }
 
 .form h2 {
-  @apply px-8;
-  @apply mt-8;
+  @apply mb-4;
   @apply font-sans text-3xl;
 }
 .form h2 + p {
@@ -53,6 +52,7 @@
 .form button[type=submit] {
   @apply bg-skin-primary;
   @apply text-white;
+  @apply mb-8;
 }
 
 .form button[type=submit] svg {
@@ -61,7 +61,7 @@
   @apply h-6 w-6;
 }
 
-.form label {
+.form *:not[.hidden] {
   @apply block;
 }
 
@@ -88,7 +88,6 @@
 
 .form label input,
 .form label textarea {
-  @apply mt-2;
   @apply block;
   @apply w-full;
   @apply px-0;
@@ -110,7 +109,7 @@
   @apply p-8;
 }
 
-.feedback--error {
+.feedback.--error {
   @apply bg-rose-600;
   @apply text-white;
 }

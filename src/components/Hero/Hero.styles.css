@@ -30,6 +30,22 @@
   @apply mx-auto;
 }
 
+.hero .action {
+  @apply text-center;
+  @apply mt-8;
+}
+
+.hero .action > * {
+  @apply rounded-full;
+  @apply py-3 px-6;
+  @apply mx-auto;
+  @apply inline-flex items-center justify-center;
+  @apply bg-skin-primary;
+  @apply text-white;
+  @apply font-sans font-semibold text-2xl;
+  @apply transition-all;
+}
+
 .heroBackground {
   @apply absolute z-0 overflow-hidden;
   @apply inset-0;

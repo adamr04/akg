@@ -80,6 +80,7 @@ interface INode {
 export interface FormField {
   type: string;
   name: string;
+  min?: number;
   label?: string;
   initial: string;
   className?: string;

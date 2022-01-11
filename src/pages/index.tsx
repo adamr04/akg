@@ -1,7 +1,7 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { INode, PageProps } from "@/definitions";
-import { Layout, ArticleCard, Container, Hero, Seo } from "@/components";
+import { Layout, ArticleCard, Container, Hero, Seo, ContactForm } from "@/components";
 import cover from "@/images/cover.png";
 
 const Home: React.FC<PageProps> = ({ data, location }) => {
@@ -25,8 +25,12 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
           demnächst. Wir laden heute auch schon alle Absolventen und Freunde
           unserer Schule sehr herzlich dazu ein!
         </p>
+        <div className="action">
+          <Link to="/reservation">Karten reservieren</Link>
+        </div>
       </Hero>
       <Container>
+        <ContactForm />
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 -mx-4 mt-4">
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug;

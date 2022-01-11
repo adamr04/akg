@@ -14,3 +14,4 @@ export { ThemeSwitch } from "./ThemeSwitch";
 export { Tags } from "./Tags";
 export { Seo } from "./Seo";
 export { ReservationForm } from "./ReservationForm";
+export { ContactForm } from "./ContactForm";

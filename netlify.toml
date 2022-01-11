@@ -1,0 +1,5 @@
+[build]
+  command = "yarn build"
+  functions = "src/functions/"
+  publish = "public/"
+  targetPort = 8000
