@@ -9,6 +9,10 @@
   @apply relative z-10;
 }
 
+.hero h1 {
+  @apply uppercase;
+}
+
 .hero > section {
   @apply max-w-screen-md;
 }
@@ -40,7 +44,7 @@
   @apply py-3 px-6;
   @apply mx-auto;
   @apply inline-flex items-center justify-center;
-  @apply bg-skin-primary;
+  @apply bg-skin-primary border-2;
   @apply text-white;
   @apply font-sans font-semibold text-2xl;
   @apply transition-all;

@@ -1,9 +1,6 @@
 import React, { Component, useState } from "react";
 import { useFormSubmission } from "@/utils/fns";
 import { FormField } from "@/definitions";
-
-import { NetlifyForm, Honeypot } from "react-netlify-forms";
-
 import { XIcon, PlusIcon } from "@heroicons/react/outline";
 import "./Form.styles.css";
 
@@ -42,7 +39,7 @@ const formConfig: FormField[] = [
 ];
 
 export const ReservationForm = () => {
-  const [guestList, setGuestList] = useState<Array>([
+  const [guestList, setGuestList] = useState([
     { guestName: "", student: false, table: false },
   ]);
   // handle input change
@@ -84,8 +81,6 @@ export const ReservationForm = () => {
     return str;
     console.log(str);
   };
-
-  console.log(guestList);
 
   const { formState, fieldsState, submitForm, updateField } =
     useFormSubmission(formConfig);
@@ -193,8 +188,8 @@ export const ReservationForm = () => {
               <textarea
                 name="guests"
                 readOnly
-                onChange={(e) => handleInputChange(e, i)}
-                value={renderSelectedGuests().innerText}
+                onChange={handleInputChange}
+                value={renderSelectedGuests()}
                 className=""
               />
             </label>

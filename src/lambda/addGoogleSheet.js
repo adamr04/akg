@@ -1,6 +1,4 @@
 if (!process.env.NETLIFY) {
-    // get local env vars if not in CI
-    // if in CI i expect its already set via the Netlify UI
     require('dotenv').config();
 }
 
@@ -10,7 +8,7 @@ if (!process.env.GOOGLE_SPREADSHEET_ID_FROM_URL) throw new Error('no GOOGLE_SPRE
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 
-exports.handler = async (event, context) => {
+const appendSpreadsheet = async (event, context) => {
     const doc = new GoogleSpreadsheet(process.env.GOOGLE_SPREADSHEET_ID_FROM_URL);
 
     await doc.useServiceAccountAuth({
@@ -38,3 +36,7 @@ exports.handler = async (event, context) => {
         };
     }
 };
+
+const newRow = { Name: "new name", Value: "new value" };
+
+appendSpreadsheet(newRow);
