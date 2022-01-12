@@ -50,7 +50,7 @@ export const ReservationForm = () => {
 
   return (
     <React.Fragment>
-      <NetlifyForm name="Contact" action="/thanks" honeypotName="bot-field">
+      <NetlifyForm name="Reservierungen" action="/thanks" honeypotName="bot-field">
         {({ handleChange, success, error }) => (
           <div className="form">
             <Honeypot />
@@ -159,9 +159,8 @@ export const ReservationForm = () => {
                 <span>Zusammefassung Ihrer Bestellung:</span>
                 <textarea
                   name="guests"
-                  value={renderSelectedGuests()}
                   className=""
-                />
+                >{renderSelectedGuests()}</textarea>
               </label>
             </section>
             <button type="submit">
