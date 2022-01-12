@@ -1,7 +1,14 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
 import { INode, PageProps } from "@/definitions";
-import { Layout, ArticleCard, Container, Hero, Seo, ContactForm } from "@/components";
+import {
+  Layout,
+  ArticleCard,
+  Container,
+  Hero,
+  Seo,
+  ContactForm,
+} from "@/components";
 import cover from "@/images/cover.png";
 
 const Home: React.FC<PageProps> = ({ data, location }) => {
@@ -30,7 +37,6 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
         </div>
       </Hero>
       <Container>
-        <ContactForm />
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 -mx-4 mt-4">
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug;

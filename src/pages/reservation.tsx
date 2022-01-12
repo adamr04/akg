@@ -17,7 +17,10 @@ const Reservation: React.FC<PageProps> = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="Karten reservieren" />
       <Container>
-        <HeaderSection title="Karten reservieren" copy="Aufgrund der COVID Bestimmungen müssen Karten personalisiert sein." />
+        <HeaderSection
+          title="Karten reservieren"
+          copy="Aufgrund der COVID Bestimmungen müssen Karten personalisiert sein."
+        />
         <ReservationForm />
       </Container>
     </Layout>

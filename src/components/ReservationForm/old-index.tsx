@@ -6,7 +6,9 @@ import { XIcon, PlusIcon } from "@heroicons/react/outline";
 import "./Form.styles.css";
 
 export const ReservationForm = () => {
-  const [guestList, setGuestList] = useState<String>([{ name: "", selectedType:"Schüler" }]);
+  const [guestList, setGuestList] = useState<String>([
+    { name: "", selectedType: "Schüler" },
+  ]);
   // handle input change
   const handleInputChange = (e, index) => {
     const { name, value } = e.target;
@@ -101,76 +103,75 @@ export const ReservationForm = () => {
       <div>
         <h2>Meine Karten</h2>
       </div>
-      {guestList.map(
-        ( x, i ) => {
-          return (
-            <React.Fragment key={i}>
-              <section className="item">
-                <label>
-                  <span>Personalisierte für</span>
-                  <input
-                    name="guestName"
-                    placeholder="Vorname Nachname"
-                    value={x.name}
-                    type="text"
-                    onChange={(e) => handleInputChange(e, i)}
-                  />
-                </label>
-                {guestList.length !== 1 && (
-                  <button
-                    className="removeItem"
-                    onClick={() => handleRemoveClick(i)}
-                  >
-                    <span className="sr-only">Person entfernen</span>
-                    <XIcon className="h-6 w-6" aria-hidden="true" />
-                  </button>
-                )}
-                <div className="flex flex-col md:flex-row md:items-center md:space-x-8">
-                  <label className="--inline">
-                    <input
-                      type="radio"
-                      name={"selectedType-"+ i}
-                      value="Schüler"
-                      onChange={radioHandler}
-                      onClick={radioHandler}
-                      defaultChecked
-                      className="border-skin-base-muted border-2 focus:border-skin-primary"
-                    />
-                    <span>Schüler*in</span>
-                  </label>
-                  <label className="--inline">
-                    <input
-                      type="radio"
-                      name={"selectedType-"+ i}
-                      value="Regulär"
-                      onChange={radioHandler}
-                      onClick={radioHandler}
-                      className="border-skin-base-muted border-2 focus:border-skin-primary"
-                    />
-                    <span>Regulärer Gast</span>
-                  </label>
-                  <label className="--inline">
-                    <input
-                      type="checkbox"
-                      className="border-skin-base-muted border-2 focus:border-skin-primary"
-                    />
-                    <span>Tisch Sitzplatz</span>
-                  </label>
-                </div>
-              </section>
-              {guestList.length - 1 === i && (
+      {guestList.map((x, i) => {
+        return (
+          <React.Fragment key={i}>
+            <section className="item">
+              <label>
+                <span>Personalisierte für</span>
+                <input
+                  name="guestName"
+                  placeholder="Vorname Nachname"
+                  value={x.name}
+                  type="text"
+                  onChange={(e) => handleInputChange(e, i)}
+                />
+              </label>
+              {guestList.length !== 1 && (
                 <button
-                  key={`add-${i}`}
-                  type="button"
-                  className="addItem"
-                  onClick={handleAddClick}
-                  >
-                  <PlusIcon className="h-6 w-6 -mt-1 mr-3" aria-hidden="true" />
-                  <span>Person hinzufügen</span>
+                  className="removeItem"
+                  onClick={() => handleRemoveClick(i)}
+                >
+                  <span className="sr-only">Person entfernen</span>
+                  <XIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
               )}
-            </React.Fragment>
-          );
+              <div className="flex flex-col md:flex-row md:items-center md:space-x-8">
+                <label className="--inline">
+                  <input
+                    type="radio"
+                    name={"selectedType-" + i}
+                    value="Schüler"
+                    onChange={radioHandler}
+                    onClick={radioHandler}
+                    defaultChecked
+                    className="border-skin-base-muted border-2 focus:border-skin-primary"
+                  />
+                  <span>Schüler*in</span>
+                </label>
+                <label className="--inline">
+                  <input
+                    type="radio"
+                    name={"selectedType-" + i}
+                    value="Regulär"
+                    onChange={radioHandler}
+                    onClick={radioHandler}
+                    className="border-skin-base-muted border-2 focus:border-skin-primary"
+                  />
+                  <span>Regulärer Gast</span>
+                </label>
+                <label className="--inline">
+                  <input
+                    type="checkbox"
+                    className="border-skin-base-muted border-2 focus:border-skin-primary"
+                  />
+                  <span>Tisch Sitzplatz</span>
+                </label>
+              </div>
+            </section>
+            {guestList.length - 1 === i && (
+              <button
+                key={`add-${i}`}
+                type="button"
+                className="addItem"
+                onClick={handleAddClick}
+              >
+                <PlusIcon className="h-6 w-6 -mt-1 mr-3" aria-hidden="true" />
+                <span>Person hinzufügen</span>
+              </button>
+            )}
+          </React.Fragment>
+        );
       })}
       <form
         className="form"
@@ -248,8 +249,9 @@ export const ReservationForm = () => {
           <strong>Bitte beachten Sie: Eine Bestellung ist verbindlich</strong>,
           d.h. Sie erklären sich bereit, im Falle einer Zuteilung von Tickets,
           diese verbindlich abzunehmen. Sie können jedoch Ihre Buchung vor
-          Zuteilung von Tickets jederzeit ohne Kosten stornieren lassen. Schicken
-          Sie uns dazu bitte ein E-Mail oder kontaktieren Sie uns telefonisch.
+          Zuteilung von Tickets jederzeit ohne Kosten stornieren lassen.
+          Schicken Sie uns dazu bitte ein E-Mail oder kontaktieren Sie uns
+          telefonisch.
         </p>
       </form>
     </div>

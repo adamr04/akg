@@ -1,8 +1,10 @@
-const envConfig = require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
-const sgMail = require('@sendgrid/mail');
+const envConfig = require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+const sgMail = require("@sendgrid/mail");
 const { SENDGRID_API_KEY, SENDGRID_TO_EMAIL } = process.env;
 
-exports.handler = async event => {
+exports.handler = async (event) => {
   const payload = JSON.parse(event.body);
   const { email, message } = payload;
 
@@ -20,10 +22,10 @@ exports.handler = async event => {
 
     return {
       statusCode: 202,
-      body: 'Message sent',
+      body: "Message sent",
     };
   } catch (error) {
-    const statusCode = typeof error.code === 'number' ? error.code : 500;
+    const statusCode = typeof error.code === "number" ? error.code : 500;
 
     return {
       statusCode,
