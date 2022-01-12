@@ -4,7 +4,6 @@ import { Container, CalloutHeading } from "@/components";
 import "./HeaderSection.styles.css";
 
 type HeaderSectionProps = {
-  children?: React.ReactNode;
   className?: string;
   copy: string;
   title: string;
@@ -13,7 +12,6 @@ type HeaderSectionProps = {
 export const HeaderSection: React.FC<HeaderSectionProps> = ({
   title,
   copy,
-  children,
 }) => {
   return (
     <>
@@ -25,7 +23,6 @@ export const HeaderSection: React.FC<HeaderSectionProps> = ({
             </h1>
             <p className="lead">{copy}</p>
           </section>
-          <section>{children}</section>
         </Container>
       </div>
     </>

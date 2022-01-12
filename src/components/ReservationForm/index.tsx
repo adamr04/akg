@@ -40,7 +40,7 @@ export const ReservationForm = () => {
     guestList.forEach((guest) => {
       const studentStr = guest.student ? "(Schüler) " : "";
       const tableStr = guest.table ? "+ Tischplatz" : "";
-      str = `${str}\n${guest.guestName} ${studentStr}${tableStr}`;
+      str = `${str}${guest.guestName} ${studentStr}${tableStr}\n`;
     });
 
     return str;
@@ -158,9 +158,9 @@ export const ReservationForm = () => {
                 <input type="text" name="telefon" onChange={handleChange} />
               </label>
               <label>
-                <span>Kartenbestellung für:</span>
+                <span>Zusammefassung Ihrer Bestellung:</span>
                 <textarea
-                  name="guest-0"
+                  name="guests"
                   readOnly
                   value={renderSelectedGuests()}
                   className=""

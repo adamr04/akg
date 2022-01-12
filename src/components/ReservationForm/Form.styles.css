@@ -98,6 +98,15 @@
   @apply focus:ring-0 focus:border-skin-fg;
 }
 
+.form textarea {
+  @apply h-32;
+}
+.form textarea[readOnly] {
+  @apply bg-skin-base;
+  @apply p-4;
+  @apply focus:ring-0 focus:border-skin-base;
+}
+
 .form label input[type=hidden],
 .form label .invisble {
   @apply hidden;

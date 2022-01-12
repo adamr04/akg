@@ -2,6 +2,8 @@
   @apply flex;
   @apply relative;
   @apply py-8;
+  @apply mx-auto;
+  @apply max-w-screen-md;
 }
 
 .header-section > section {
