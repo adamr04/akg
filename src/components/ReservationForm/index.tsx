@@ -194,7 +194,7 @@ export const ReservationForm = () => {
                 name="guests"
                 readOnly
                 onChange={(e) => handleInputChange(e, i)}
-                value={renderSelectedGuests()}
+                value={renderSelectedGuests().innerText}
                 className=""
               />
             </label>
