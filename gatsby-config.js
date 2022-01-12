@@ -1,4 +1,17 @@
+const { createProxyMiddleware } = require("http-proxy-middleware")
+
 module.exports = {
+  developMiddleware: app => {
+    app.use(
+      "/.netlify/functions/",
+      createProxyMiddleware({
+        target: "http://localhost:8888",
+        pathRewrite: {
+          "/.netlify/functions/": "",
+        },
+      })
+    )
+  },
   pathPrefix: `/akg`,
   siteMetadata: {
     title: "AKG Ballroom",
@@ -17,14 +30,6 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-postcss",
     "gatsby-plugin-sitemap",
-    {
-      resolve: `gatsby-plugin-build-date`,
-      options: {
-        formatting: {
-          format: "MMM DD YYYY",
-        },
-      },
-    },
     // Articles
     {
       resolve: `gatsby-source-filesystem`,

@@ -26,6 +26,7 @@ e2e-tests/gatsby-pnp/
 __diff_output__/
 *.tgz
 .gatsby-context.js
+.env
 .env.*
 
 # lock files

@@ -44,18 +44,9 @@ export const useFormSubmission = (fields: FormField[]) => {
 
     const { name } = e.target;
 
-    const files: FormDataState = {};
-
-    // @ts-ignore
-    for (const field of e.target.elements) {
-      if (field.type === "file") {
-        files[field.name] = field.files[0];
-      }
-    }
-
     fetch("/", {
       method: "POST",
-      body: encode({ "form-name": name, ...fieldsState, ...files }),
+      body: encode({ "form-name": name, ...fieldsState }),
     })
       .then((resp) => {
         setFormState(resp.status === 200 ? "SUCCESS" : "ERROR");

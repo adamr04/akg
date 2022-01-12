@@ -7,7 +7,6 @@ import {
   Container,
   Hero,
   Seo,
-  ContactForm,
 } from "@/components";
 import cover from "@/images/cover.png";
 
