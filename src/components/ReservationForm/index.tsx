@@ -50,69 +50,6 @@ export const ReservationForm = () => {
 
   return (
     <React.Fragment>
-      <div className="form">
-        {guestList.map((x, i) => {
-          return (
-            <React.Fragment key={i}>
-              <section className="item">
-                <label>
-                  <span>Karte für</span>
-                  <input
-                    name="guestName"
-                    placeholder="Vorname Nachname"
-                    value={x.guestName}
-                    type="text"
-                    required
-                    onChange={(e) => handleInputChange(e, i)}
-                  />
-                </label>
-                {guestList.length !== 1 && (
-                  <button
-                    className="removeItem"
-                    onClick={() => handleRemoveClick(i)}
-                  >
-                    <span className="sr-only">Person entfernen</span>
-                    <XIcon className="h-6 w-6" aria-hidden="true" />
-                  </button>
-                )}
-                <div className="flex flex-col md:flex-row md:items-center md:space-x-8">
-                  <label className="--inline">
-                    <input
-                      type="checkbox"
-                      name="student"
-                      checked={x.student}
-                      onChange={(e) => handleCheckboxChange(e, i)}
-                      className="border-skin-base-muted border-2 focus:border-skin-primary"
-                    />
-                    <span>Schüler*in</span>
-                  </label>
-                  <label className="--inline">
-                    <input
-                      type="checkbox"
-                      name="table"
-                      checked={x.table}
-                      onChange={(e) => handleCheckboxChange(e, i)}
-                      className="border-skin-base-muted border-2 focus:border-skin-primary"
-                    />
-                    <span>Tisch Sitzplatz</span>
-                  </label>
-                </div>
-              </section>
-              {guestList.length - 1 === i && (
-                <button
-                  key={`add-${i}`}
-                  type="button"
-                  className="addItem"
-                  onClick={handleAddClick}
-                >
-                  <PlusIcon className="h-6 w-6 -mt-1 mr-3" aria-hidden="true" />
-                  <span>Person hinzufügen</span>
-                </button>
-              )}
-            </React.Fragment>
-          );
-        })}
-      </div>
       <NetlifyForm name="Contact" action="/thanks" honeypotName="bot-field">
         {({ handleChange, success, error }) => (
           <div className="form">
@@ -133,6 +70,67 @@ export const ReservationForm = () => {
                 </p>
               </div>
             )}
+            {guestList.map((x, i) => {
+              return (
+                <React.Fragment key={i}>
+                  <section className="item">
+                    <label>
+                      <span>Karte für</span>
+                      <input
+                        name="guestName"
+                        placeholder="Vorname Nachname"
+                        value={x.guestName}
+                        type="text"
+                        required
+                        onChange={(e) => handleInputChange(e, i)}
+                      />
+                    </label>
+                    {guestList.length !== 1 && (
+                      <button
+                        className="removeItem"
+                        onClick={() => handleRemoveClick(i)}
+                      >
+                        <span className="sr-only">Person entfernen</span>
+                        <XIcon className="h-6 w-6" aria-hidden="true" />
+                      </button>
+                    )}
+                    <div className="flex flex-col md:flex-row md:items-center md:space-x-8">
+                      <label className="--inline">
+                        <input
+                          type="checkbox"
+                          name="student"
+                          checked={x.student}
+                          onChange={(e) => handleCheckboxChange(e, i)}
+                          className="border-skin-base-muted border-2 focus:border-skin-primary"
+                        />
+                        <span>Schüler*in</span>
+                      </label>
+                      <label className="--inline">
+                        <input
+                          type="checkbox"
+                          name="table"
+                          checked={x.table}
+                          onChange={(e) => handleCheckboxChange(e, i)}
+                          className="border-skin-base-muted border-2 focus:border-skin-primary"
+                        />
+                        <span>Tisch Sitzplatz</span>
+                      </label>
+                    </div>
+                  </section>
+                  {guestList.length - 1 === i && (
+                    <button
+                      key={`add-${i}`}
+                      type="button"
+                      className="addItem"
+                      onClick={handleAddClick}
+                    >
+                      <PlusIcon className="h-6 w-6 -mt-1 mr-3" aria-hidden="true" />
+                      <span>Person hinzufügen</span>
+                    </button>
+                  )}
+                </React.Fragment>
+              );
+            })}
             <section className="item">
               <h2>Ihre Kontaktdaten</h2>
               <label>
@@ -157,11 +155,10 @@ export const ReservationForm = () => {
                 <span>Telefon:</span>
                 <input type="text" name="telefon" onChange={handleChange} />
               </label>
-              <label>
+              <label className="hidden">
                 <span>Zusammefassung Ihrer Bestellung:</span>
                 <textarea
                   name="guests"
-                  readOnly
                   value={renderSelectedGuests()}
                   className=""
                 />
