@@ -52,7 +52,8 @@
 .form button[type=submit] {
   @apply bg-skin-primary;
   @apply text-white;
-  @apply mb-8;
+  @apply my-8;
+  @apply w-full;
 }
 
 .form button[type=submit] svg {
