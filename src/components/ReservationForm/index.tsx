@@ -90,7 +90,11 @@ export const ReservationForm = () => {
   const { formState, fieldsState, submitForm, updateField } =
     useFormSubmission(formConfig);
   if (formState === "SUCCESS") {
-    return <div>Thanks! We&apos;ll be in touch shortly</div>;
+    return (
+      <div className="feedback">
+        <p>Danke für Ihre Bestellung! Wir werden uns in Kürze mit Ihnen in Verbindung setzen.</p>
+      </div>
+    );
   }
 
   return (
@@ -188,7 +192,8 @@ export const ReservationForm = () => {
               <span>Zusammefassung Ihrer Bestellung:</span>
               <textarea
                 name="guests"
-                type="text"
+                readOnly
+                onChange={(e) => handleInputChange(e, i)}
                 value={renderSelectedGuests()}
                 className=""
               />
