@@ -64,6 +64,11 @@
   @apply w-full;
 }
 
+.form button[disabled] {
+  @apply opacity-60;
+  @apply cursor-not-allowed;
+}
+
 .form button[type=submit] svg {
   @apply animate-spin;
   @apply -ml-1 mr-3;
