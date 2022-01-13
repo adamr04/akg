@@ -31,13 +31,6 @@ const formConfig: FormField[] = [
   },
   {
     initial: "",
-    label: "Gäste",
-    name: "Guestlist",
-    type: "text",
-    element: "textarea",
-  },
-  {
-    initial: "",
     name: "bot-field",
     type: "hidden",
     element: "input",
@@ -85,7 +78,7 @@ export const ReservationForm = () => {
       str = `${str}${guest.guestName} ${studentStr}${tableStr}\n`;
     });
 
-    return str = "Hello";
+    return str;
     console.log(str);
   };
 
@@ -167,7 +160,7 @@ export const ReservationForm = () => {
         <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="guests">
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="guests" />
-          <textarea name="Guestlist" required></textarea>
+          <textarea name="Guestlist" required value={renderSelectedGuests()}></textarea>
           <button type="submit">Send</button>
         </form>
         <form
@@ -203,8 +196,9 @@ export const ReservationForm = () => {
                 name="guests"
                 readOnly
                 onChange={handleInputChange}
+                value={renderSelectedGuests()}
                 className=""
-              >Hello</textarea>
+              />
             </label>
           </section>
           <input
