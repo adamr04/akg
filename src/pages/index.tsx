@@ -18,10 +18,8 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
         cover={cover}
       >
         <p>
-          Nachdem wir unseren 42. Schulball schweren Herzens wegen Covid-19
-          absagen mussten, hoffen wir für dieses Schuljahr, dass der 43.
-          Schulball unserer Schule zum Thema CASINO ROYALE im Palais Auersperg
-          am 20. Mai 2022 über die Bühne gehen wird. Nähere Informationen folgen
+          Der 43. Schulball des Akademischen Gymnasium Wien steht ganz im Motto CASINO ROYALE.
+          Das Fest wird am 20. Mai 2022 im Palais Auersperg über die Bühne gehen. Nähere Informationen folgen
           demnächst. Wir laden heute auch schon alle Absolventen und Freunde
           unserer Schule sehr herzlich dazu ein!
         </p>
