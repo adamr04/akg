@@ -1,13 +1,7 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
 import { INode, PageProps } from "@/definitions";
-import {
-  Layout,
-  ArticleCard,
-  Container,
-  Hero,
-  Seo,
-} from "@/components";
+import { Layout, ArticleCard, Container, Hero, Seo } from "@/components";
 import cover from "@/images/cover.png";
 
 const Home: React.FC<PageProps> = ({ data, location }) => {

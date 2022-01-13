@@ -1,7 +1,7 @@
-const { createProxyMiddleware } = require("http-proxy-middleware")
+const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = {
-  developMiddleware: app => {
+  developMiddleware: (app) => {
     app.use(
       "/.netlify/functions/",
       createProxyMiddleware({
@@ -10,7 +10,7 @@ module.exports = {
           "/.netlify/functions/": "",
         },
       })
-    )
+    );
   },
   pathPrefix: `/akg`,
   siteMetadata: {

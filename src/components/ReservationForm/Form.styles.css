@@ -9,6 +9,10 @@
   @apply mb-4;
   @apply font-sans text-3xl;
 }
+.form h3 {
+  @apply mb-0;
+  @apply font-sans text-2xl font-semibold;
+}
 .form h2 + p {
   @apply text-lg;
   @apply px-8;
@@ -22,6 +26,11 @@
   @apply bg-skin-base-flash;
   @apply transition-all;
   @apply hover:shadow-2xl;
+}
+
+.item.--muted {
+  @apply bg-transparent;
+  @apply hover:shadow-none;
 }
 
 .form button {

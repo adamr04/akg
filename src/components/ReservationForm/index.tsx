@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import { Link } from "gatsby";
 import { XIcon, PlusIcon } from "@heroicons/react/outline";
 import "./Form.styles.css";
 
@@ -46,9 +47,13 @@ export const ReservationForm = () => {
     console.log(str);
   };
 
+  const handleScroll = () => {
+    window[`scrollTo`]({ top: 0, behavior: `smooth` });
+  };
+
   return (
     <React.Fragment>
-      <div className="form">
+      <div className="form" id="top">
         {guestList.map((x, i) => {
           return (
             <React.Fragment key={i}>
@@ -111,38 +116,76 @@ export const ReservationForm = () => {
           );
         })}
       </div>
-      <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="Bestellungen" className="form">
+      <form
+        method="post"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        name="Bestellungen"
+        className="form"
+      >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="Bestellungen" />
         <section className="item">
           <h2>Ihre Kontaktdaten</h2>
           <label>
             <span>Ihr Name</span>
-            <input type="text" name="Kontaktperson" placeholder="Vorname Nachname" required />
+            <input
+              type="text"
+              name="Kontaktperson"
+              placeholder="Vorname Nachname"
+              required
+            />
           </label>
           <label>
-            <span>Email Adresse</span>
-            <input type="email" name="Email" placeholder="james@bond.com" required />
+            <span>Email</span>
+            <input
+              type="email"
+              name="Email"
+              placeholder="james@bond.com"
+              required
+            />
           </label>
           <label>
             <span>Telefon</span>
             <input type="tel" name="Telefon" placeholder="+43 (0) 007" />
           </label>
+          <textarea
+            name="Guestlist"
+            readOnly
+            value={renderSelectedGuests()}
+            className="hidden"
+          />
         </section>
-        <section className="item">
-          <label>
-            <span>Zusammenfassung Ihrer Bestellung</span>
-            <textarea name="Guestlist" required value={renderSelectedGuests()}></textarea>
-          </label>
-        </section>
-        <button type="submit"><span>({guestList.length}) Karten bestellen</span></button>
+        {guestList[0].guestName && (
+          <section className="item --muted">
+            <h3>Zusammenfassung Ihrer Bestellung</h3>
+            <ol className="list-decimal text-xl font-medium ml-4">
+              {guestList.map((guest, index) => (
+                <li key={index}>
+                  {guest.guestName}
+                  {guest.student ? " (Schüler) " : ""}
+                  {guest.table ? " + Tischplatz" : ""}
+                </li>
+              ))}
+            </ol>
+            <a
+              onClick={handleScroll}
+              className="font-semibold inline-flex m-auto"
+            >
+              Ändern
+            </a>
+          </section>
+        )}
+        <button type="submit">
+          <span>({guestList.length}) Karten bestellen</span>
+        </button>
         <p>
-          <strong>Bitte beachten Sie: Eine Bestellung ist verbindlich</strong>
-          , d.h. Sie erklären sich bereit, im Falle einer Zuteilung von
-          Tickets, diese verbindlich abzunehmen. Sie können jedoch Ihre
-          Buchung vor Zuteilung von Tickets jederzeit ohne Kosten stornieren
-          lassen. Schicken Sie uns dazu bitte ein E-Mail oder kontaktieren Sie
-          uns telefonisch.
+          <strong>Bitte beachten Sie: Eine Bestellung ist verbindlich</strong>,
+          d.h. Sie erklären sich bereit, im Falle einer Zuteilung von Tickets,
+          diese verbindlich abzunehmen. Sie können jedoch Ihre Buchung vor
+          Zuteilung von Tickets jederzeit ohne Kosten stornieren lassen.
+          Schicken Sie uns dazu bitte ein E-Mail oder kontaktieren Sie uns
+          telefonisch.
         </p>
       </form>
     </React.Fragment>

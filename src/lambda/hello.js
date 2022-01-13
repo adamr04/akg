@@ -6,5 +6,5 @@ export function handler(event, context, callback) {
     body: JSON.stringify({
       msg: "Hello, World! ",
     }),
-  })
+  });
 }
