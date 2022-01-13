@@ -17,10 +17,6 @@
   @apply mb-0;
   @apply font-sans text-2xl font-semibold;
 }
-.form h2 + p {
-  @apply text-lg;
-  @apply px-8;
-}
 
 .item {
   @apply relative;

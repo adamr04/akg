@@ -10,7 +10,6 @@ import "./Header.styles.css";
 const navigation = {
   links: [
     { name: "Home", to: "/" },
-    { name: "Programm", to: "/programm" },
     { name: "Karten reservieren", to: "/reservation" },
   ],
 };

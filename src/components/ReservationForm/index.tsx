@@ -77,7 +77,10 @@ export const ReservationForm = () => {
           </dl>
         </section>
         <section>
-          <h2 className="font-sans">Meine Bestellung</h2>
+          <div>
+            <h2 className="font-sans">Meine Bestellung</h2>
+            <p>Aufgrund der COVID Bestimmungen müssen Karten personalisiert sein. Alle eingegebenen Daten unterliegen dem Datenschutzgesetz und werden nach dem Schulball gelöscht.</p>
+          </div>
           {guestList.map((x, i) => {
             return (
               <React.Fragment key={i}>

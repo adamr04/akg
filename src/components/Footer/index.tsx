@@ -7,7 +7,7 @@ import "./Footer.styles.css";
 const navigation = {
   links: [
     { name: "Home", to: "/" },
-    { name: "Archiv", to: "/archives" },
+    { name: "Archiv", to: "/archive" },
     { name: "Datenschutz", to: "/privacy" },
   ],
 };

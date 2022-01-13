@@ -18,7 +18,7 @@ const Reservation: React.FC<PageProps> = ({ data, location }) => {
       <Container>
         <HeaderSection
           title="Karten reservieren"
-          copy="Aufgrund der COVID Bestimmungen müssen Karten personalisiert sein. Alle eingegebenen Daten unterliegen dem Datenschutzgesetz und werden nach dem Schulball gelöscht."
+          copy="Bestellen Sie hier Ihre Karten. Wir freuen uns auf ein tolles gemeinsames Fest!"
         />
         <ReservationForm />
       </Container>
