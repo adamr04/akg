@@ -38,9 +38,9 @@ export const ReservationForm = () => {
     let str = "";
 
     guestList.forEach((guest) => {
-      const studentStr = guest.student ? "(Schüler) " : "";
+      const studentStr = guest.student ? " (Schüler) " : "";
       const tableStr = guest.table ? "+ Tischplatz" : "";
-      str = `${str}${guest.guestName} ${studentStr}${tableStr}\n`;
+      str = `${str}[${guest.guestName}${studentStr}${tableStr}] `;
     });
 
     return str;
