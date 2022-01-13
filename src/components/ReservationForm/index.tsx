@@ -164,6 +164,12 @@ export const ReservationForm = () => {
             </React.Fragment>
           );
         })}
+        <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="guests">
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="guests" />
+          <textarea name="Guestlist" required></textarea>
+          <button type="submit">Send</button>
+        </form>
         <form
           name="Reservierungen"
           onSubmit={submitForm}
