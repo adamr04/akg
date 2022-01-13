@@ -31,6 +31,13 @@ const formConfig: FormField[] = [
   },
   {
     initial: "",
+    label: "Gäste",
+    name: "Guestlist",
+    type: "text",
+    element: "textarea",
+  },
+  {
+    initial: "",
     name: "bot-field",
     type: "hidden",
     element: "input",
