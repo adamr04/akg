@@ -113,7 +113,7 @@ export const ReservationForm = () => {
       </div>
       <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="Bestellungen" className="form">
         <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="guests" />
+        <input type="hidden" name="form-name" value="Bestellungen" />
         <section className="item">
           <h2>Ihre Kontaktdaten</h2>
           <label>
