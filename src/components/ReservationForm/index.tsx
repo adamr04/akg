@@ -47,8 +47,9 @@ export const ReservationForm = () => {
     console.log(str);
   };
 
-  const handleScroll = () => {
-    window[`scrollTo`]({ top: 0, behavior: `smooth` });
+  const handleScroll = event => {
+    event.preventDefault();
+    window[`scrollTo`]({ top: 460, behavior: `smooth` });
   };
 
   return (
@@ -85,7 +86,7 @@ export const ReservationForm = () => {
             </div>
           </dl>
         </section>
-        <section>
+        <section id="order">
           <div>
             <h2 className="font-sans">Meine Bestellung</h2>
             <p>
@@ -212,6 +213,7 @@ export const ReservationForm = () => {
                 ))}
               </ol>
               <a
+                href="#order"
                 onClick={handleScroll}
                 className="font-semibold inline-flex m-auto"
               >
