@@ -8,7 +8,6 @@ import {
   HeaderSection,
   ReservationForm,
 } from "@/components";
-import cover from "@/images/cover.png";
 
 const Reservation: React.FC<PageProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;

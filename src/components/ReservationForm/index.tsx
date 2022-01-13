@@ -38,8 +38,8 @@ export const ReservationForm = () => {
     let str = "";
 
     guestList.forEach((guest) => {
-      const studentStr = guest.student ? " (Schüler) " : "";
-      const tableStr = guest.table ? "+ Tischplatz" : "";
+      const studentStr = guest.student ? ", Schüler" : "";
+      const tableStr = guest.table ? " + Tischplatz" : "";
       str = `${str}[${guest.guestName}${studentStr}${tableStr}] `;
     });
 
@@ -118,6 +118,7 @@ export const ReservationForm = () => {
       </div>
       <form
         method="post"
+        action="/success"
         netlify-honeypot="bot-field"
         data-netlify="true"
         name="Bestellungen"

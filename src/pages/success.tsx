@@ -1,30 +1,36 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-
-import { Layout, Hero, Seo, Button } from "@/components";
 import { PageProps } from "@/definitions";
+import {
+  Layout,
+  Container,
+  Seo,
+  Button,
+  HeaderSection,
+} from "@/components";
 
-const ThankYouPage: React.FC<PageProps> = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title;
+const Success: React.FC<PageProps> = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Danke für Ihre Bestellung" />
-      <Hero title="Danke!">
-        <p className="text-center">
-          Wir haben Ihre Bestellung erhalten und werden uns in Kürze bei Ihnen melden.
-        </p>
+      <Seo title="Karten reservieren" />
+      <Container>
+        <HeaderSection
+          title="Danke für Ihre Bestellung!"
+          copy="Wir haben Ihre Bestellung erhalten und werden uns in Kürze bei Ihnen melden."
+        />
         <p className="text-center">
           <Button as="link" to="/">
             Zurück zu Home
           </Button>
         </p>
-      </Hero>
+      </Container>
     </Layout>
   );
 };
 
-export default ThankYouPage;
+export default Success;
 
 export const pageQuery = graphql`
   query {
