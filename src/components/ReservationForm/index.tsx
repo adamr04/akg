@@ -78,7 +78,7 @@ export const ReservationForm = () => {
       str = `${str}${guest.guestName} ${studentStr}${tableStr}\n`;
     });
 
-    return str;
+    return str = "Hello";
     console.log(str);
   };
 
@@ -157,10 +157,6 @@ export const ReservationForm = () => {
             </React.Fragment>
           );
         })}
-        <form name="infos" method="POST" data-netlify="true">
-    <label>Message: <textarea name="message" value={renderSelectedGuests()}></textarea></label>
-    <button type="submit">Send</button>
-</form>
         <form
           name="Reservierungen"
           onSubmit={submitForm}
@@ -194,7 +190,7 @@ export const ReservationForm = () => {
                 name="guests"
                 readOnly
                 onChange={handleInputChange}
-                value={renderSelectedGuests()}
+                value={"Gäste:\n"}
                 className=""
               />
             </label>
