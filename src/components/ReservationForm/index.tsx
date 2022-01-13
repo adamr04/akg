@@ -86,6 +86,7 @@ export const ReservationForm = () => {
             </div>
           </dl>
         </section>
+        <hr className="mt-4 border-t-2 border-skin-fg" />
         <section id="order">
           <div>
             <h2 className="font-sans">Meine Bestellung</h2>
@@ -126,7 +127,7 @@ export const ReservationForm = () => {
                         name="student"
                         checked={x.student}
                         onChange={(e) => handleCheckboxChange(e, i)}
-                        className="border-skin-base-muted border-2 focus:border-skin-primary"
+                        className="border-2 focus:border-skin-primary"
                       />
                       <span>Ermäßigt</span>
                     </label>
@@ -136,7 +137,7 @@ export const ReservationForm = () => {
                         name="table"
                         checked={x.table}
                         onChange={(e) => handleCheckboxChange(e, i)}
-                        className="border-skin-base-muted border-2 focus:border-skin-primary"
+                        className="border-2 focus:border-skin-primary"
                       />
                       <span>Tisch Sitzplatz (€ 15,-)</span>
                     </label>

@@ -38,7 +38,7 @@
   @apply py-3 px-6;
   @apply inline-flex items-center justify-center;
   @apply bg-skin-base-flash;
-  @apply text-skin-primary;
+  @apply text-skin-primary-text;
   @apply font-sans font-semibold text-2xl;
   @apply transition-all;
 }
