@@ -87,7 +87,8 @@ export const ReservationForm = () => {
   if (formState === "SUCCESS") {
     return (
       <div className="feedback">
-        <p>Danke für Ihre Bestellung! Wir werden uns in Kürze mit Ihnen in Verbindung setzen.</p>
+        <h2>Danke für Ihre Bestellung!</h2>
+        <p>Wir werden uns in Kürze mit Ihnen in Verbindung setzen.</p>
       </div>
     );
   }
@@ -156,6 +157,10 @@ export const ReservationForm = () => {
             </React.Fragment>
           );
         })}
+        <form name="infos" method="POST" data-netlify="true">
+    <label>Message: <textarea name="message" value={renderSelectedGuests()}></textarea></label>
+    <button type="submit">Send</button>
+</form>
         <form
           name="Reservierungen"
           onSubmit={submitForm}
@@ -245,68 +250,6 @@ export const ReservationForm = () => {
           </p>
         </form>
       </div>
-      {/*
-      <NetlifyForm name="Reservierungen" action="/thanks" honeypotName="bot-field">
-        {({ handleChange, success, error }) => (
-          <div className="form">
-            <Honeypot />
-            {success && (
-              <div className="feedback">
-                <p>
-                  Danke für Ihre Bestellung! Wir werden uns in Kürze bei Ihnen
-                  melden.
-                </p>
-              </div>
-            )}
-            {error && (
-              <div className="feedback --error">
-                <p>
-                  Es tut uns leid. Leider gibt es ein technisches Problem. Bitte
-                  probieren Sie es noch einmal.
-                </p>
-              </div>
-            )}
-            <section className="item">
-              <h2>Ihre Kontaktdaten</h2>
-              <label>
-                <span>Name:</span>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  onChange={handleChange}
-                />
-              </label>
-              <label>
-                <span>Email:</span>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  onChange={handleChange}
-                />
-              </label>
-              <label>
-                <span>Telefon:</span>
-                <input type="text" name="telefon" onChange={handleChange} />
-              </label>
-              <label className="">
-                <span>Zusammefassung Ihrer Bestellung:</span>
-                <textarea
-                  name="guests"
-                  type="text"
-                  onChange={handleChange}
-                  className=""
-                >{renderSelectedGuests()}</textarea>
-              </label>
-            </section>
-            <button type="submit">
-              ({guestList.length}) Karten reservieren
-            </button>
-          </div>
-        )}
-      </NetlifyForm>
-      */}
     </React.Fragment>
   );
 };
