@@ -153,7 +153,7 @@ export const ReservationForm = () => {
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="Bestellungen" />
           <section className="item">
-            <h2>Ihre Kontaktdaten</h2>
+            <h2>Kontaktperson</h2>
             <label>
               <span>Ihr Name</span>
               <input
@@ -168,7 +168,7 @@ export const ReservationForm = () => {
               <input
                 type="email"
                 name="Email"
-                placeholder="james@bond.com"
+                placeholder="james@bond.mi6"
                 required
               />
             </label>
@@ -185,7 +185,7 @@ export const ReservationForm = () => {
           </section>
           {guestList[0].guestName && (
             <section className="item --muted">
-              <h3>Zusammenfassung Ihrer Bestellung</h3>
+              <h3>Zusammenfassung der Bestellung</h3>
               <ol className="list-decimal text-xl font-medium ml-4">
                 {guestList.map((guest, index) => (
                   <li key={index}>
