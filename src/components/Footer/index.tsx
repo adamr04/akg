@@ -19,7 +19,7 @@ export const Footer: React.FC<EmptyProps> = () => {
       <Nav links={links} />
       <p className="copyright">
         &copy; {new Date().getFullYear()}{" "}
-        <span>Akademisches Gymnasium Wien. Alle Rechte vorbehalten.</span>
+        <span>Verein Schulball Akademisches Gymnasium Wien. Alle Rechte vorbehalten.</span>
       </p>
     </footer>
   );

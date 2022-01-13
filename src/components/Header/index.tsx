@@ -10,7 +10,7 @@ import "./Header.styles.css";
 const navigation = {
   links: [
     { name: "Home", to: "/" },
-    { name: "Karten reservieren", to: "/reservation" },
+    { name: "Preise & Karten", to: "/reservation" },
   ],
 };
 
