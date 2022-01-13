@@ -52,7 +52,6 @@
 .form button[type=submit] {
   @apply bg-skin-primary;
   @apply text-white;
-  @apply my-8;
   @apply w-full;
 }
 

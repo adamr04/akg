@@ -157,101 +157,41 @@ export const ReservationForm = () => {
             </React.Fragment>
           );
         })}
-        <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="guests">
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="guests" />
-          <textarea name="Guestlist" required value={renderSelectedGuests()}></textarea>
-          <button type="submit">Send</button>
-        </form>
-        <form
-          name="Reservierungen"
-          onSubmit={submitForm}
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <section className="item">
-            <h2>Ihre Kontaktdaten</h2>
-            {formConfig.map(
-              ({ name, label, placeholder, element, type, className }) => {
-                return (
-                  <label key={name}>
-                    <span>{label}</span>
-                    {React.createElement(element, {
-                      key: name,
-                      type,
-                      name,
-                      label: name,
-                      value: fieldsState[name],
-                      onChange: updateField,
-                      placeholder: placeholder,
-                      className,
-                    })}
-                  </label>
-                );
-              }
-            )}
-            <label className="">
-              <span>Zusammefassung Ihrer Bestellung:</span>
-              <textarea
-                name="guests"
-                readOnly
-                onChange={handleInputChange}
-                value={renderSelectedGuests()}
-                className=""
-              />
-            </label>
-          </section>
-          <input
-            type="hidden"
-            name="form-name"
-            value="Reservierungen"
-            className="hidden"
-          />
-          <button type="submit">
-            {formState === "SUBMITTING" ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                ></circle>
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                ></path>
-              </svg>
-            ) : (
-              <span>({guestList.length}) Karten bestellen</span>
-            )}
-          </button>
-          {formState === "SUBMITTING" && (
-            <div className="feedback">
-              <p>Bestellung in Arbeit...</p>
-            </div>
-          )}
-          {formState === "ERROR" && (
-            <div className="feedback --error">
-              <p>Bitte füllen Sie das Formular vollständig aus.</p>
-            </div>
-          )}
-          <p>
-            <strong>Bitte beachten Sie: Eine Bestellung ist verbindlich</strong>
-            , d.h. Sie erklären sich bereit, im Falle einer Zuteilung von
-            Tickets, diese verbindlich abzunehmen. Sie können jedoch Ihre
-            Buchung vor Zuteilung von Tickets jederzeit ohne Kosten stornieren
-            lassen. Schicken Sie uns dazu bitte ein E-Mail oder kontaktieren Sie
-            uns telefonisch.
-          </p>
-        </form>
       </div>
+      <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="Reservierungen" className="form">
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="guests" />
+        <section className="item">
+          <h2>Ihre Kontaktdaten</h2>
+          <label>
+            <span>Ihr Name</span>
+            <input type="text" name="Kontaktperson" placeholder="Vorname Nachname" required />
+          </label>
+          <label>
+            <span>Email Adresse</span>
+            <input type="email" name="Email" placeholder="james@bond.com" required />
+          </label>
+          <label>
+            <span>Telefon</span>
+            <input type="tel" name="Telefon" placeholder="+43 (0) 007" />
+          </label>
+        </section>
+        <section className="item">
+          <label>
+            <span>Zusammenfassung Ihrer Bestellung</span>
+            <textarea name="Guestlist" required value={renderSelectedGuests()}></textarea>
+          </label>
+        </section>
+        <button type="submit"><span>({guestList.length}) Karten bestellen</span></button>
+        <p>
+          <strong>Bitte beachten Sie: Eine Bestellung ist verbindlich</strong>
+          , d.h. Sie erklären sich bereit, im Falle einer Zuteilung von
+          Tickets, diese verbindlich abzunehmen. Sie können jedoch Ihre
+          Buchung vor Zuteilung von Tickets jederzeit ohne Kosten stornieren
+          lassen. Schicken Sie uns dazu bitte ein E-Mail oder kontaktieren Sie
+          uns telefonisch.
+        </p>
+      </form>
     </React.Fragment>
   );
 };
