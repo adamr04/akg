@@ -4,9 +4,13 @@
   @apply mx-auto mb-6;
   @apply font-medium;
 }
+.form section,
+.form form {
+  @apply grid gap-6;
+}
 
 .form h2 {
-  @apply mb-4;
+  @apply mt-4;
   @apply font-sans text-3xl;
 }
 .form h3 {

@@ -18,8 +18,11 @@ const Success: React.FC<PageProps> = ({ data, location }) => {
       <Container>
         <HeaderSection
           title="Danke für Ihre Bestellung!"
-          copy="Wir haben Ihre Bestellung erhalten und werden uns in Kürze bei Ihnen melden."
+          copy="Bitte bezahlen Sie per Banküberweisung oder Bar an ausgewählten Terminen in der Schule, wo die Karten vorher auch abgeholt werden können."
         />
+        <p className="text-center font-semibold">
+          Verein Schulball AkG:<br />IBAN AT102011184050260200
+        </p>
         <p className="text-center">
           <Button as="link" to="/">
             Zurück zu Home
