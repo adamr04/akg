@@ -1,42 +1,6 @@
 import React, { Component, useState } from "react";
-import { useFormSubmission } from "@/utils/fns";
-import { FormField } from "@/definitions";
 import { XIcon, PlusIcon } from "@heroicons/react/outline";
 import "./Form.styles.css";
-
-const formConfig: FormField[] = [
-  {
-    initial: "",
-    label: "Ihr Name",
-    name: "Name",
-    placeholder: "James Bond",
-    type: "text",
-    element: "input",
-  },
-  {
-    initial: "",
-    label: "Email Adresse",
-    placeholder: "james@007.com",
-    name: "Email",
-    type: "email",
-    element: "input",
-  },
-  {
-    initial: "+43 ",
-    label: "Telefon",
-    placeholder: "+43 007",
-    name: "Telefon",
-    type: "tel",
-    element: "input",
-  },
-  {
-    initial: "",
-    name: "bot-field",
-    type: "hidden",
-    element: "input",
-    className: "hidden",
-  },
-];
 
 export const ReservationForm = () => {
   const [guestList, setGuestList] = useState([
@@ -81,17 +45,6 @@ export const ReservationForm = () => {
     return str;
     console.log(str);
   };
-
-  const { formState, fieldsState, submitForm, updateField } =
-    useFormSubmission(formConfig);
-  if (formState === "SUCCESS") {
-    return (
-      <div className="feedback">
-        <h2>Danke für Ihre Bestellung!</h2>
-        <p>Wir werden uns in Kürze mit Ihnen in Verbindung setzen.</p>
-      </div>
-    );
-  }
 
   return (
     <React.Fragment>
@@ -158,7 +111,7 @@ export const ReservationForm = () => {
           );
         })}
       </div>
-      <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="Reservierungen" className="form">
+      <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="Bestellungen" className="form">
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="guests" />
         <section className="item">
