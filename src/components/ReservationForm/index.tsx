@@ -190,9 +190,8 @@ export const ReservationForm = () => {
                 name="guests"
                 readOnly
                 onChange={handleInputChange}
-                value={"Gäste:\n"}
                 className=""
-              />
+              >Hello</textarea>
             </label>
           </section>
           <input
