@@ -62,8 +62,14 @@ export const ReservationForm = () => {
                 <div className="text-lg font-semibold">Ermäßigt</div>
               </dt>
               <dd className="mt-1 text-lg">
-                <div>€ 30,– (Vorverkauf)<br />€ 40,– (Abendkassa)</div>
-                <div className="text-sm mt-2">Schüler*in, Student*in, Lehrlinge, Zivildiener, Lehrer*in des AkG</div>
+                <div>
+                  € 30,– (Vorverkauf)
+                  <br />€ 40,– (Abendkassa)
+                </div>
+                <div className="text-sm mt-2">
+                  Schüler*in, Student*in, Lehrlinge, Zivildiener, Lehrer*in des
+                  AkG
+                </div>
               </dd>
             </div>
             <div className="sm:col-span-1">
@@ -71,7 +77,10 @@ export const ReservationForm = () => {
                 <div className="text-lg font-semibold">Regulär</div>
               </dt>
               <dd className="mt-1 text-lg">
-                <div>€ 40,– (Vorverkauf)<br />€ 50,– (Abendkassa)</div>
+                <div>
+                  € 40,– (Vorverkauf)
+                  <br />€ 50,– (Abendkassa)
+                </div>
               </dd>
             </div>
           </dl>
@@ -79,7 +88,11 @@ export const ReservationForm = () => {
         <section>
           <div>
             <h2 className="font-sans">Meine Bestellung</h2>
-            <p>Aufgrund der COVID Bestimmungen müssen Karten personalisiert sein. Alle eingegebenen Daten unterliegen dem Datenschutzgesetz und werden nach dem Schulball gelöscht.</p>
+            <p>
+              Aufgrund der COVID Bestimmungen müssen Karten personalisiert sein.
+              Alle eingegebenen Daten unterliegen dem Datenschutzgesetz und
+              werden nach dem Schulball gelöscht.
+            </p>
           </div>
           {guestList.map((x, i) => {
             return (
@@ -135,7 +148,10 @@ export const ReservationForm = () => {
                     className="addItem"
                     onClick={handleAddClick}
                   >
-                    <PlusIcon className="h-6 w-6 -mt-1 mr-3" aria-hidden="true" />
+                    <PlusIcon
+                      className="h-6 w-6 -mt-1 mr-3"
+                      aria-hidden="true"
+                    />
                     <span>Person hinzufügen</span>
                   </button>
                 )}
@@ -207,12 +223,12 @@ export const ReservationForm = () => {
             <span>({guestList.length}) Karten bestellen</span>
           </button>
           <p>
-            <strong>Bitte beachten Sie: Eine Bestellung ist verbindlich</strong>,
-            d.h. Sie erklären sich bereit, im Falle einer Zuteilung von Tickets,
-            diese verbindlich abzunehmen. Sie können jedoch Ihre Buchung vor
-            Zuteilung von Tickets jederzeit ohne Kosten stornieren lassen.
-            Schicken Sie uns dazu bitte ein E-Mail oder kontaktieren Sie uns
-            telefonisch.
+            <strong>Bitte beachten Sie: Eine Bestellung ist verbindlich</strong>
+            , d.h. Sie erklären sich bereit, im Falle einer Zuteilung von
+            Tickets, diese verbindlich abzunehmen. Sie können jedoch Ihre
+            Buchung vor Zuteilung von Tickets jederzeit ohne Kosten stornieren
+            lassen. Schicken Sie uns dazu bitte ein E-Mail oder kontaktieren Sie
+            uns telefonisch.
           </p>
         </form>
       </div>

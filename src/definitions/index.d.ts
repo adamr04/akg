@@ -17,6 +17,7 @@ interface ArticleCardProps {
   title?: string;
   order?: number;
   description?: any;
+  externalLink?: boolean;
   tags?: keyof JSX.IntrinsicElements | string;
 }
 

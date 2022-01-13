@@ -1,13 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import { PageProps } from "@/definitions";
-import {
-  Layout,
-  Container,
-  Seo,
-  Button,
-  HeaderSection,
-} from "@/components";
+import { Layout, Container, Seo, Button, HeaderSection } from "@/components";
 
 const Success: React.FC<PageProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
@@ -21,7 +15,9 @@ const Success: React.FC<PageProps> = ({ data, location }) => {
           copy="Bitte bezahlen Sie per Banküberweisung oder Bar an ausgewählten Terminen in der Schule, wo die Karten vorher auch abgeholt werden können."
         />
         <p className="text-center font-semibold">
-          Verein Schulball AkG:<br />IBAN AT102011184050260200
+          Verein Schulball AkG:
+          <br />
+          IBAN AT102011184050260200
         </p>
         <p className="text-center">
           <Button as="link" to="/">
