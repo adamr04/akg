@@ -223,7 +223,7 @@ export const ReservationForm = () => {
             </section>
           )}
           <button type="submit" disabled={(guestList.length === 1 && guestList[0].guestName === "") && "disabled"}>
-            <span>({guestList.length}) Karten bestellen</span>
+            <span>{guestList[0].guestName && "("+guestList.length+")"} Karten bestellen</span>
           </button>
           <p>
             <strong>Bitte beachten Sie: Eine Bestellung ist verbindlich</strong>
