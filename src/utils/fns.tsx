@@ -2,8 +2,12 @@
 export const themeStorageKey = "theme";
 
 export const getTheme = (): string => {
-  if (typeof window === "undefined") return "dark";
-  return localStorage.getItem(themeStorageKey) || "dark";
+  if (typeof window === "undefined") return "";
+  if (typeof window === "undefined" && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    localStorage.setItem(themeStorageKey, "dark");
+    document.documentElement.classList.add("dark");
+  }
+  return localStorage.getItem(themeStorageKey);
 };
 
 export const setLightMode = (): void => {

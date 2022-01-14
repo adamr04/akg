@@ -1,17 +1,4 @@
-const { createProxyMiddleware } = require("http-proxy-middleware");
-
 module.exports = {
-  developMiddleware: (app) => {
-    app.use(
-      "/.netlify/functions/",
-      createProxyMiddleware({
-        target: "http://localhost:8888",
-        pathRewrite: {
-          "/.netlify/functions/": "",
-        },
-      })
-    );
-  },
   pathPrefix: `/akg`,
   siteMetadata: {
     title: "AKG Ballroom",
@@ -19,7 +6,7 @@ module.exports = {
       name: `Matthias Grieder`,
     },
     description: `Ballroom des Akademischen Gymansium Wien`,
-    siteUrl: `https://zeitvertrieb.github.io/akg/`,
+    siteUrl: `https://akg-ballroom.netlify.app`,
     social: {
       github: `zeitvertrieb/akg`,
     },
