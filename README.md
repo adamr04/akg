@@ -6,8 +6,8 @@ Schulball Website für das Akademische Gymnasium Wien
 
 | What?           | Details / Where?                                                               |
 | --------------- | ------------------------------------------------------------------------------ |
-| Framework       | [https://www.gatsbyjs.com/](GatsbyJS) + [https://www.netlify.com/](Netlify)    |
-| Form Submission | https://formspree.io/                                                          |
+| Framework       | [GatsbyJS](https://www.gatsbyjs.com/) + [Netlify](https://www.netlify.com/)    |
+| Form Submission | [Formspree](https://formspree.io/)                                             |
 | Deployment      | https://akg-ballroom.netlify.app/ fully automated GitOps Flow                  |
 | Package-Manager | `yarn`                                                                         |
 | Language        | `Typescript`
