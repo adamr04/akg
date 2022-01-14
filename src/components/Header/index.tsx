@@ -10,6 +10,8 @@ import "./Header.styles.css";
 const navigation = {
   links: [
     { name: "Home", to: "/" },
+    { name: "Über uns", to: "/about" },
+    { name: "Ballzeitung", to: "/ballzeitung" },
     { name: "Preise & Karten", to: "/reservation" },
   ],
 };

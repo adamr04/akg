@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import {
   Layout,
-  CalloutHeading,
+  HeaderSection,
   DefinitionList,
   Container,
   Seo,
@@ -29,11 +29,11 @@ const PageTemplate: React.FC<PageProps> = ({ data, location }) => {
           itemType="http://schema.org/Article"
         >
           <header className="col-start-1">
-            <CalloutHeading itemProp="headline" text={page.frontmatter.title} />
+            <HeaderSection itemProp="headline" title={page.frontmatter.title} copy={page.frontmatter.description} />
           </header>
           <section
             itemProp="articleBody"
-            className="prose prose-xl mt-24 mx-auto"
+            className="prose prose-xl mt-8 mx-auto"
           >
             <MDXRenderer>{page.body}</MDXRenderer>
           </section>
