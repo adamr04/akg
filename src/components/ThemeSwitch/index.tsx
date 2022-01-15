@@ -40,20 +40,3 @@ export const ThemeSwitch: React.FC<EmptyProps> = () => {
     </Button>
   );
 };
-
-
-const ToggleMode = () => {
-
-
-  return (
-    <button className="button" onClick={ThemeToggle}>
-      {theme === 'dark' ? (
-        <img src={sun} alt="Light mode" />
-      ) : (
-        <img src={moon} alt="Dark mode" />
-      )}
-    </button>
-  );
-};
-
-export default ToggleMode;
