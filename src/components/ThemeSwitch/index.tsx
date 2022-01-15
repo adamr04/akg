@@ -1,27 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 import { EmptyProps } from "@/definitions";
 import { Button } from "@/components";
-import { getTheme, setDarkMode, setLightMode } from "@/utils/fns";
 
 export const ThemeSwitch: React.FC<EmptyProps> = () => {
-  const [isDark, toggleDark] = useState(getTheme() === "dark");
-  const changeTheme = () => {
-    toggleDark(!isDark);
-    if (isDark) {
-      setLightMode();
-    } else {
-      setDarkMode();
-    }
+  let websiteTheme;
+  if (typeof window !== `undefined`) {
+    websiteTheme = window.__theme;
+  }
+  useEffect(() => {
+    setTheme(window.__theme);
+  }, []);
+
+  const [theme, setTheme] = useState(websiteTheme);
+
+  const ThemeToggle = () => {
+    window.__setPreferredTheme(websiteTheme === 'dark' ? 'light' : 'dark');
+    setTheme(websiteTheme === 'dark' ? 'light' : 'dark');
   };
+
   return (
     <Button
       as="button"
       styleType="default"
-      onClick={changeTheme}
+      onClick={ThemeToggle}
       className="--icon"
     >
-      {isDark ? (
+      {theme === 'dark' ? (
         <>
           <SunIcon className="h-6 w-6" aria-hidden="true" />
           <span className="sr-only">Switch to light mode</span>
@@ -35,3 +40,20 @@ export const ThemeSwitch: React.FC<EmptyProps> = () => {
     </Button>
   );
 };
+
+
+const ToggleMode = () => {
+
+
+  return (
+    <button className="button" onClick={ThemeToggle}>
+      {theme === 'dark' ? (
+        <img src={sun} alt="Light mode" />
+      ) : (
+        <img src={moon} alt="Dark mode" />
+      )}
+    </button>
+  );
+};
+
+export default ToggleMode;

@@ -10,7 +10,6 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 import { ISite } from "@/definitions";
-import { getTheme } from "@/utils/fns";
 
 type MetaProps = JSX.IntrinsicElements["meta"];
 
@@ -69,14 +68,10 @@ export const Seo: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
     },
   ];
 
-  const className = getTheme();
-
   return (
     <Helmet
       htmlAttributes={{
         lang,
-        class: className,
-        ...(className === "dark" && { class: className }),
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
