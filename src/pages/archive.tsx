@@ -15,7 +15,7 @@ const Archive: React.FC<PageProps> = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Archiv" />
+      <Seo title="Archiv der Schulbälle des AKG Wien" />
       <Container>
         <HeaderSection
           title="Archiv"
