@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: `/akg`,
   siteMetadata: {
-    title: "AKG Ballroom",
+    title: "Schulball - Akademisches Gymnasium Wien",
     author: {
       name: `Matthias Grieder`,
     },
@@ -115,7 +115,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Ballroom`,
-        short_name: `Ballroom`,
+        short_name: `AKG Ballroom`,
         start_url: `/`,
         background_color: `#0c0e14`,
         theme_color: `#0c0e14`,
