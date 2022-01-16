@@ -23,6 +23,7 @@ export const Footer: React.FC<EmptyProps> = () => {
           Verein Schulball Akademisches Gymnasium Wien. Alle Rechte vorbehalten.
         </span>
       </p>
+      <p className="copyright">Website created by Matthias Grieder, <a href="https://www.ebcont.com" target="_blank">EBCONT</a></p>
     </footer>
   );
 };
