@@ -4,13 +4,13 @@ Schulball Website für das Akademische Gymnasium Wien
 
 ## Development Stack
 
-| What?           | Details / Where?                                                               |
-| --------------- | ------------------------------------------------------------------------------ |
-| Framework       | [GatsbyJS](https://www.gatsbyjs.com/) + [Netlify](https://www.netlify.com/)    |
-| Form Submission | [Formspree](https://formspree.io/)                                             |
-| Deployment      | https://akg-ballroom.netlify.app/ fully automated GitOps Flow                  |
-| Package-Manager | `yarn`                                                                         |
-| Language        | `Typescript`
+| What?           | Details / Where?                                                            |
+| --------------- | --------------------------------------------------------------------------- |
+| Framework       | [GatsbyJS](https://www.gatsbyjs.com/) + [Netlify](https://www.netlify.com/) |
+| Form Submission | [Formspree](https://formspree.io/)                                          |
+| Deployment      | https://akg-ballroom.netlify.app/ fully automated GitOps Flow               |
+| Package-Manager | `yarn`                                                                      |
+| Language        | `Typescript`                                                                |
 
 ## Getting Started
 

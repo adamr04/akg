@@ -30,7 +30,11 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           itemType="http://schema.org/Article"
         >
           <header className="col-start-1">
-            <HeaderSection itemProp="headline" title={post.frontmatter.title} copy={post.frontmatter.description} />
+            <HeaderSection
+              itemProp="headline"
+              title={post.frontmatter.title}
+              copy={post.frontmatter.description}
+            />
           </header>
           <section
             itemProp="articleBody"

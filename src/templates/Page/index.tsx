@@ -29,7 +29,11 @@ const PageTemplate: React.FC<PageProps> = ({ data, location }) => {
           itemType="http://schema.org/Article"
         >
           <header className="col-start-1">
-            <HeaderSection itemProp="headline" title={page.frontmatter.title} copy={page.frontmatter.description} />
+            <HeaderSection
+              itemProp="headline"
+              title={page.frontmatter.title}
+              copy={page.frontmatter.description}
+            />
           </header>
           <section
             itemProp="articleBody"
