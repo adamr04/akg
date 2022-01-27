@@ -76,7 +76,7 @@ export const ReservationForm = () => {
   return (
     <React.Fragment>
       <HeaderSection
-        title="Karten reservieren"
+        title="Karten bestellen"
         copy="Bestellen Sie hier Ihre Karten. Wir freuen uns auf ein tolles gemeinsames Fest!"
       />
       <div className="form">
