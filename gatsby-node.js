@@ -157,7 +157,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       tags: String
-      embeddedImagesLocal: [File] @fileByRelativePath
     }
 
     type Fields {
