@@ -2,6 +2,8 @@
 
 Schulball Website für das Akademische Gymnasium Wien
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8cc2b79b-8039-4610-825c-1dd4154d6c51/deploy-status)](https://app.netlify.com/sites/akg-ballroom/deploys)
+
 ## Development Stack
 
 | What?           | Details / Where?                                                            |
