@@ -59,59 +59,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map((edge) => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  url: site.siteMetadata.siteUrl + edge.node.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                });
-              });
-            },
-            query: `
-              {
-                allMdx(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___order] },
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      slug
-                      frontmatter {
-                        order
-                        title
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: "/rss.xml",
-            title: "AKG RSS feed",
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Ballroom`,

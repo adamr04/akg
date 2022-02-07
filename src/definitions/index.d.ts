@@ -32,6 +32,7 @@ interface PageProps {
     allMdx: {
       totalCount: INode;
       edges: IEdge[];
+      embeddedImagesLocal: INode;
     };
     site: ISite;
   };
