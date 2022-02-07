@@ -35,7 +35,7 @@
 
 .form button {
   @apply rounded-full;
-  @apply py-3 px-6;
+  @apply py-4 px-8;
   @apply inline-flex items-center justify-center;
   @apply bg-skin-base-flash;
   @apply text-skin-primary-text;

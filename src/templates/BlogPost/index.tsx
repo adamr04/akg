@@ -2,12 +2,7 @@ import * as React from "react";
 import { Link, graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import {
-  Layout,
-  HeaderSection,
-  Container,
-  Seo,
-} from "@/components";
+import { Layout, HeaderSection, Container, Seo } from "@/components";
 import { PageProps } from "@/definitions";
 
 import "./BlogPost.styles.css";
@@ -38,7 +33,9 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             itemProp="articleBody"
             className="prose prose-xl mt-8 mx-auto"
           >
-            <MDXRenderer localImages={post.frontmatter.embeddedImagesLocal}>{post.body}</MDXRenderer>
+            <MDXRenderer localImages={post.frontmatter.embeddedImagesLocal}>
+              {post.body}
+            </MDXRenderer>
           </section>
         </article>
         <nav className="mt-16 py-8 grid grid-cols-blog border-t border-skin-base-muted">

@@ -1,6 +1,6 @@
 .btn {
   @apply rounded-full;
-  @apply py-3 px-6;
+  @apply py-4 px-8;
   @apply inline-flex items-center justify-center;
   @apply font-sans font-semibold text-lg text-current;
   @apply border border-opacity-0 hover:border-opacity-100;

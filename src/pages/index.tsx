@@ -15,7 +15,6 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
         title="Casino Royale"
         date="20. Mai 2022"
         location="Palais Auersperg Wien"
-        cover={cover}
       >
         <p>
           Der 43. Schulball des Akademischen Gymnasium Wien steht ganz im Motto
@@ -29,7 +28,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
         </div>
       </Hero>
       <Container>
-        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 -mx-4 mt-4">
+        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug;
             return (

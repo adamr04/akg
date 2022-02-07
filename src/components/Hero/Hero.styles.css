@@ -1,8 +1,6 @@
 .hero {
   @apply flex;
-  @apply min-h-[88vh];
   @apply relative;
-  @apply py-16;
 }
 
 .hero > * {
@@ -18,7 +16,8 @@
 }
 
 .hero section + section {
-  @apply mt-16;
+  @apply pb-24;
+  @apply border-b-2 border-skin-fg;
 }
 
 .hero p.lead {
@@ -41,22 +40,23 @@
 
 .hero .action > * {
   @apply rounded-full;
-  @apply py-3 px-6;
+  @apply py-4 px-8;
   @apply mx-auto;
   @apply inline-flex items-center justify-center;
-  @apply bg-skin-primary border-2;
+  @apply border-0;
+  @apply bg-skin-primary;
   @apply text-skin-fg-focus;
   @apply font-sans font-semibold text-2xl;
   @apply transition-all;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white
 }
 
 .heroBackground {
   @apply absolute z-0 overflow-hidden;
   @apply inset-0;
-  @apply bg-black;
+  @apply bg-skin-base;
   @apply bg-cover bg-center;
 }
 
 .heroBackground + * {
-  @apply text-white;
 }

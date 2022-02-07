@@ -278,6 +278,20 @@ export const ReservationForm = () => {
               >
                 Ändern
               </a>
+              <dl className="-mx-8 flex flex-wrap items-end divide-x border-t">
+                <div className="flex flex-1 flex-col px-8 pt-8">
+                  <dt className="order-2">Im Vorverkauf €{diff},– sparen.</dt>
+                  <dd className="order-1 text-4xl font-extrabold sm:text-5xl">
+                    <span className="text-3xl">€</span> {totalVVK}
+                  </dd>
+                </div>
+                <div className="flex flex-1 flex-col px-8 pt-8">
+                  <dt className="order-2">An Abendkassa zahlen</dt>
+                  <dd className="order-1 text-2xl font-extrabold sm:text-3xl">
+                    <span className="text-3xl">€</span> {totalAK}
+                  </dd>
+                </div>
+              </dl>
             </section>
           )}
           <button
