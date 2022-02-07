@@ -75,5 +75,6 @@ interface INode {
     type: string;
     tags?: string;
     description: string;
+    embeddedImagesLocal: [File];
   };
 }

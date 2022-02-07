@@ -5,7 +5,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import {
   Layout,
   HeaderSection,
-  DefinitionList,
   Container,
   Seo,
 } from "@/components";
@@ -31,7 +30,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         >
           <header className="col-start-1">
             <HeaderSection
-              itemProp="headline"
               title={post.frontmatter.title}
               copy={post.frontmatter.description}
             />
@@ -40,9 +38,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             itemProp="articleBody"
             className="prose prose-xl mt-8 mx-auto"
           >
-            <MDXRenderer localImages={post.frontmatter.embeddedImagesLocal}>
-              {post.body}
-            </MDXRenderer>
+            <MDXRenderer>{post.body}</MDXRenderer>
           </section>
         </article>
         <nav className="mt-16 py-8 grid grid-cols-blog border-t border-skin-base-muted">
