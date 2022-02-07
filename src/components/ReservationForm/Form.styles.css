@@ -60,7 +60,7 @@
 
 .form button[type=submit] {
   @apply bg-skin-primary;
-  @apply text-white;
+  @apply text-skin-fg-focus;
   @apply w-full;
 }
 
@@ -96,8 +96,13 @@
 
 .form label.--inline > input {
   @apply w-5 h-5;
-  @apply border-2 border-current;
+  @apply border-2 border-skin-fg;
   @apply mt-0;
+}
+
+.form label input[type='checkbox']:checked, .form label input[type='radio']:checked {
+  @apply bg-black;
+  @apply text-skin-fg-focus;
 }
 
 .form label input,

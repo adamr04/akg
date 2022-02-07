@@ -12,9 +12,9 @@
   }
 
   :root {
-    --color-primary: #46b;
-    --color-primary-tint: #7190dd;
-    --color-primary-shade: #46b;
+    --color-primary: #e4c155;
+    --color-primary-tint: #e4c155;
+    --color-primary-shade: #9a1a15;
     --color-primary-contrast: var(--color-primary-shade);
     --color-background: #f5f6fa;
     --color-background-muted: #e7e5fd;

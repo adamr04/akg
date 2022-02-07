@@ -23,9 +23,7 @@ export const Hero: React.FC<HeroProps> = ({
     <>
       <div className="hero">
         {cover ? (
-          <div className="heroBackground">
-            <img src={cover} alt="cover image" />
-          </div>
+          <div className="heroBackground" style={{ backgroundImage: `url(${cover})` }} />
         ) : null}
         <Container>
           <section>

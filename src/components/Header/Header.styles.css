@@ -35,6 +35,7 @@
 
 .brand {
   @apply border-transparent hover:border-transparent;
+  @apply text-skin-fg;
 }
 
 .header--mobile {

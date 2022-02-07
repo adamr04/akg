@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { BaseComponentProps } from "@/types";
 
 const getInitialTheme = () => {
   if (typeof window !== "undefined" && window.localStorage) {

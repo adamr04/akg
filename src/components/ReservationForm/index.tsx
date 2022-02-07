@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import { useForm } from "@formspree/react";
 import { Link } from "gatsby";
 import { Container, Button, HeaderSection } from "@/components";
-import { XIcon, PlusIcon } from "@heroicons/react/outline";
+import { XIcon, PlusIcon, CheckIcon } from "@heroicons/react/outline";
 import "./Form.styles.css";
 
 export const ReservationForm = () => {
@@ -48,6 +48,17 @@ export const ReservationForm = () => {
     return str;
   };
 
+  const countStudent = guestList.filter(
+    (guest) => guest.student === true
+  ).length;
+  const countRegular = guestList.filter(
+    (guest) => guest.student === false
+  ).length;
+  const countTable = guestList.filter((guest) => guest.table === true).length;
+  const totalVVK = countStudent * 30 + countRegular * 40 + countTable * 15;
+  const totalAK = countStudent * 40 + countRegular * 50 + countTable * 15;
+  const diff = totalAK - totalVVK;
+
   const handleScroll = (event) => {
     event.preventDefault();
     window[`scrollTo`]({ top: 460, behavior: `smooth` });
@@ -60,10 +71,25 @@ export const ReservationForm = () => {
           title="Danke für Ihre Bestellung!"
           copy="Bitte bezahlen Sie per Banküberweisung oder Bar an ausgewählten Terminen in der Schule, wo die Karten vorher auch abgeholt werden können."
         />
+        <h2>Bezahlung</h2>
+        <dl className="-mx-8 -mt-8 flex flex-wrap items-end divide-x">
+          <div className="flex flex-col px-8 pt-8">
+            <dt className="order-2">Jetzt überweisen und €{diff},– sparen</dt>
+            <dd className="order-1 text-4xl font-extrabold sm:text-5xl">
+              <span className="text-3xl">€</span> {totalVVK}
+            </dd>
+          </div>
+          <div className="flex flex-col px-8 pt-8">
+            <dt className="order-2">An Abendkassa zahlen</dt>
+            <dd className="order-1 text-2xl font-extrabold sm:text-3xl">
+              <span className="text-3xl">€</span> {totalAK}
+            </dd>
+          </div>
+        </dl>
         <p className="text-center font-semibold">
-          Verein Schulball AkG:
+          Verein Schulball AkG
           <br />
-          IBAN AT102011184050260200
+          IBAN: AT102011184050260200
         </p>
         <p className="text-center">
           <Button as="link" to="/">
@@ -216,6 +242,20 @@ export const ReservationForm = () => {
               name="Guestlist"
               readOnly
               value={renderSelectedGuests()}
+              className="hidden"
+            />
+            <input
+              type="number"
+              name="Abendkassa EUR"
+              value={totalAK}
+              readOnly
+              className="hidden"
+            />
+            <input
+              type="number"
+              name="Vorverkauf EUR"
+              value={totalVVK}
+              readOnly
               className="hidden"
             />
           </section>

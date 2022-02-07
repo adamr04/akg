@@ -1,6 +1,6 @@
 .hero {
   @apply flex;
-  @apply min-h-[60vh];
+  @apply min-h-[88vh];
   @apply relative;
   @apply py-16;
 }
@@ -45,7 +45,7 @@
   @apply mx-auto;
   @apply inline-flex items-center justify-center;
   @apply bg-skin-primary border-2;
-  @apply text-white;
+  @apply text-skin-fg-focus;
   @apply font-sans font-semibold text-2xl;
   @apply transition-all;
 }
@@ -53,12 +53,8 @@
 .heroBackground {
   @apply absolute z-0 overflow-hidden;
   @apply inset-0;
-}
-
-.heroBackground > img {
-  @apply absolute z-0;
-  @apply min-h-full min-w-full;
-  @apply object-cover;
+  @apply bg-black;
+  @apply bg-cover bg-center;
 }
 
 .heroBackground + * {
