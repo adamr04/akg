@@ -40,7 +40,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             itemProp="articleBody"
             className="prose prose-xl mt-8 mx-auto"
           >
-            <MDXRenderer>{post.body}</MDXRenderer>
+            <MDXRenderer localImages={post.frontmatter.embeddedImagesLocal}>{post.body}</MDXRenderer>
           </section>
         </article>
         <nav className="mt-16 py-8 grid grid-cols-blog border-t border-skin-base-muted">
@@ -88,6 +88,14 @@ export const pageQuery = graphql`
         type
         title
         description
+        embeddedImagesLocal {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
       }
     }
     previous: mdx(id: { eq: $previousPostId }) {

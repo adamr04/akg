@@ -3,7 +3,14 @@ title: Ballzeitung
 description: "Was wir für die Ballzeitung brauchen."
 type: article
 order: 1
+embeddedImagesLocal:
+  - BallZ01.jpg
+  - BallZ02.jpg
+  - BallZ03.jpg
+  - BallZ04.jpg
+  - BallZ05.jpg
 ---
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
 ### Vier (4) Fotos
 
@@ -37,3 +44,13 @@ Beantwortet bitte kurz und knapp folgende Fragen:
 
 Bitte gebt es euren Klassenvertreter*innen und schickt es an:<br />
 **casinoroyale2022@schulball-akg.at**
+
+### Beispiele aus vergangenen Ballzeitungen
+
+<div class="gallery">
+  <GatsbyImage alt="Ballzeitung Beispiel" image={getImage(props.localImages[0])} />
+  <GatsbyImage alt="Ballzeitung Beispiel" image={getImage(props.localImages[1])} />
+  <GatsbyImage alt="Ballzeitung Beispiel" image={getImage(props.localImages[2])} />
+  <GatsbyImage alt="Ballzeitung Beispiel" image={getImage(props.localImages[3])} />
+  <GatsbyImage alt="Ballzeitung Beispiel" image={getImage(props.localImages[4])} />
+</div>
