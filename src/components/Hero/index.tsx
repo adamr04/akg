@@ -23,7 +23,10 @@ export const Hero: React.FC<HeroProps> = ({
     <>
       <div className="hero">
         {cover ? (
-          <div className="heroBackground" style={{ backgroundImage: `url(${cover})` }} />
+          <div
+            className="heroBackground"
+            style={{ backgroundImage: `url(${cover})` }}
+          />
         ) : null}
         <Container>
           <section>
