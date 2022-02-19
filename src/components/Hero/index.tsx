@@ -10,6 +10,7 @@ type HeroProps = {
   location?: string;
   title: string;
   cover?: string;
+  video?: string;
 };
 
 export const Hero: React.FC<HeroProps> = ({
@@ -17,6 +18,7 @@ export const Hero: React.FC<HeroProps> = ({
   date,
   title,
   cover,
+  video,
   children,
 }) => {
   return (
@@ -27,6 +29,13 @@ export const Hero: React.FC<HeroProps> = ({
             className="heroBackground"
             style={{ backgroundImage: `url(${cover})` }}
           />
+        ) : null}
+        {video ? (
+          <div className="heroBackground">
+            <video autoPlay loop muted playsInline className="absolute object-cover w-full h-full blur-md opacity-70">
+              <source src="https://media.istockphoto.com/videos/dancers-performing-latin-dance-red-light-background-ballroom-couple-video-id1324301062" type="video/webm" />
+            </video>
+          </div>
         ) : null}
         <Container>
           <section>

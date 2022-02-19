@@ -15,6 +15,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
         title="Casino Royale"
         date="20. Mai 2022"
         location="Palais Auersperg Wien"
+        video
       >
         <p>
           Der 43. Schulball des Akademischen Gymnasium Wien steht ganz im Motto

@@ -1,6 +1,7 @@
 .hero {
   @apply flex;
   @apply relative;
+  @apply text-white;
 }
 
 .hero > * {
@@ -54,7 +55,7 @@
 .heroBackground {
   @apply absolute z-0 overflow-hidden;
   @apply inset-0;
-  @apply bg-skin-base;
+  @apply bg-black;
   @apply bg-cover bg-center;
 }
 
