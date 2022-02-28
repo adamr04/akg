@@ -69,7 +69,7 @@ export const ReservationForm = () => {
       <Container>
         <HeaderSection
           title="Danke für Ihre Bestellung!"
-          copy="Bitte bezahlen Sie per Banküberweisung oder Bar an ausgewählten Terminen in der Schule, wo die Karten vorher auch abgeholt werden können."
+          copy="Bitte überweisen sie bis spätestens 13. Mai 2022 das Geld für Ihre Kartenbestellung."
         />
         <h2>Bezahlung</h2>
         <dl className="-mx-8 -mt-8 flex flex-wrap items-end divide-x">
