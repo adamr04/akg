@@ -68,7 +68,7 @@ export const ReservationForm = () => {
     return (
       <Container>
         <HeaderSection
-          title="helo!"
+          title="Danke für Ihre Bestellung!"
           copy="Bitte überweisen sie bis spätestens 13. Mai 2022 das Geld für Ihre Kartenbestellung."
         />
         <h2>Bezahlung</h2>
