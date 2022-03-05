@@ -79,12 +79,6 @@ export const ReservationForm = () => {
               <span className="text-3xl">€</span> {totalVVK}
             </dd>
           </div>
-          <div className="flex flex-col px-8 pt-8">
-            <dt className="order-2">An Abendkassa zahlen</dt>
-            <dd className="order-1 text-2xl font-extrabold sm:text-3xl">
-              <span className="text-3xl">€</span> {totalAK}
-            </dd>
-          </div>
         </dl>
         <p className="text-center font-semibold">
           Verein Schulball AkG
@@ -283,12 +277,6 @@ export const ReservationForm = () => {
                   <dt className="order-2">Im Vorverkauf €{diff},– sparen.</dt>
                   <dd className="order-1 text-4xl font-extrabold sm:text-5xl">
                     <span className="text-3xl">€</span> {totalVVK}
-                  </dd>
-                </div>
-                <div className="flex flex-1 flex-col px-8 pt-8">
-                  <dt className="order-2">An Abendkassa zahlen</dt>
-                  <dd className="order-1 text-2xl font-extrabold sm:text-3xl">
-                    <span className="text-3xl">€</span> {totalAK}
                   </dd>
                 </div>
               </dl>
