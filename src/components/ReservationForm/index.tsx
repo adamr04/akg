@@ -175,6 +175,17 @@ export const ReservationForm = () => {
                       />
                       <span>Ermäßigt</span>
                     </label>
+
+                    <label className="--inline">
+                      <input
+                        type="checkbox"
+                        name="regular"
+                        onChange={(e) => handleCheckboxChange(e, i)}
+                        className="border-2 focus:border-skin-primary"
+                      />
+                      <span>Regulär</span>
+                    </label>
+
                     <label className="--inline">
                       <input
                         type="checkbox"
