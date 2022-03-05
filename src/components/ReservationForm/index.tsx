@@ -74,7 +74,6 @@ export const ReservationForm = () => {
         <h2>Bezahlung</h2>
         <dl className="-mx-8 -mt-8 flex flex-wrap items-end divide-x">
           <div className="flex flex-col px-8 pt-8">
-            <dt className="order-2">Jetzt überweisen und €{diff},– sparen</dt>
             <dd className="order-1 text-4xl font-extrabold sm:text-5xl">
               <span className="text-3xl">€</span> {totalVVK}
             </dd>
@@ -274,7 +273,6 @@ export const ReservationForm = () => {
               </a>
               <dl className="-mx-8 flex flex-wrap items-end divide-x border-t">
                 <div className="flex flex-1 flex-col px-8 pt-8">
-                  <dt className="order-2">Im Vorverkauf €{diff},– sparen.</dt>
                   <dd className="order-1 text-4xl font-extrabold sm:text-5xl">
                     <span className="text-3xl">€</span> {totalVVK}
                   </dd>
