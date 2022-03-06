@@ -329,7 +329,7 @@ export const ReservationForm = () => {
           <p>
             <strong>Bitte beachten Sie: Eine Bestellung ist verbindlich</strong>
             , d.h. Sie erklären sich bereit, im Falle einer Zuteilung von
-            Tickets, diese verbindlich abzunehmen. Sie können jedoch Ihre
+            Tickets, diese verbindlich anzunehmen. Sie können jedoch Ihre
             Buchung vor Zuteilung von Tickets jederzeit ohne Kosten stornieren
             lassen. Schicken Sie uns dazu bitte ein E-Mail oder kontaktieren Sie
             uns telefonisch.
