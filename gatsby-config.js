@@ -17,7 +17,6 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-postcss",
     "gatsby-plugin-sitemap",
-    "gatsby-transformer-remark",
     // Articles
     {
       resolve: `gatsby-source-filesystem`,
