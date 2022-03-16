@@ -194,7 +194,7 @@ export const ReservationForm = () => {
                         onChange={(e) => handleCheckboxChange(e, i)}
                         className="border-2 focus:border-skin-primary"
                       />
-                      <span>Tisch Sitzplatz (€ 15,-)</span>
+                      <span>Tisch Sitzplatz (€ 15,-) (optional)</span>
                     </label>
                   </div>
                 </section>
