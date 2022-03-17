@@ -165,8 +165,7 @@ export const ReservationForm = () => {
                     </button>
                   )}
                   <div className="flex flex-col md:flex-row md:items-center md:space-x-8">
-
-                  <label className="--inline">
+                    <label className="--inline">
                       <input
                         type="checkbox"
                         name="regular"
