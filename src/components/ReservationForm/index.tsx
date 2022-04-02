@@ -99,6 +99,7 @@ export const ReservationForm = () => {
         copy="Bestellen Sie hier Ihre Karten. Wir freuen uns auf ein tolles gemeinsames Fest!"
       />
       <div className="form">
+        <p>Informationen zu Kartenbestellung, -abholung sowie zu den Coronaregeln am Ball finden Sie auf “Über uns”</p>
         <section>
           <h2 className="font-sans">Preise</h2>
           <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
