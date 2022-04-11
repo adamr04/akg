@@ -24,6 +24,10 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
           heute auch schon alle Absolventen und Freunde unserer Schule sehr
           herzlich dazu ein!
         </p>
+        <p>
+          Infos zu Kartenbestellung und Kartenabholung finden Sie auf <br />
+          "Über Uns".
+        </p>
         <div className="action">
           <Link to="/reservation">Karten reservieren</Link>
         </div>
