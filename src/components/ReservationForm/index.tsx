@@ -99,7 +99,21 @@ export const ReservationForm = () => {
         copy="Bestellen Sie hier Ihre Karten. Wir freuen uns auf ein tolles gemeinsames Fest!"
       />
       <div className="form">
-        <p>Informationen zu Kartenbestellung, -abholung sowie zu den Coronaregeln am Ball finden Sie auf “Über uns”</p>
+        <h2>Kartenverkauf und -abholung</h2>
+        <p>
+          Der Kartenvorverkauf für unseren Schulball beginnt in der Schule am 20. April 2022. <br />
+          Es können hier auch die online bestellten und bezahlten Karten abgeholt werden!
+        </p>
+        <h3>WANN?</h3>
+        <p>
+          Mittwoch, 20. April - 9:30 bis 11 Uhr<br />
+          Freitag, 22. April - 9:30 bis 11 Uhr
+        </p>
+        <h3>WO?</h3>
+        <p>
+          2. Stock im AkG, an einem der Tische beim Lehrer*innen Zimmer<br />
+          Weitere Termine folgen! 
+        </p>
         <section>
           <h2 className="font-sans">Preise</h2>
           <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
