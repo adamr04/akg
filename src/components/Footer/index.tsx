@@ -22,6 +22,14 @@ export const Footer: React.FC<EmptyProps> = () => {
         <span>
           Verein Schulball Akademisches Gymnasium Wien. Alle Rechte vorbehalten.
         </span>
+        <br />
+        <span>
+          Email: casinoroyale2022@schulball-akg.at
+        </span>
+          <br />
+        <span>
+          IBAN: AT10 2011 1840 5026 0200
+        </span>
       </p>
       <p className="copyright">
         Website by Matthias Grieder,{" "}
