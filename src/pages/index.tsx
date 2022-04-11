@@ -26,7 +26,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
         </p>
         <p>
           Infos zu Kartenbestellung und Kartenabholung finden Sie auf <br />
-          "Über Uns".
+          "Preise & Karten".
         </p>
         <div className="action">
           <Link to="/reservation">Karten reservieren</Link>
