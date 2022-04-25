@@ -145,6 +145,14 @@ export const ReservationForm = () => {
             </div>
           </dl>
         </section>
+        <h2>Tischkarten</h2>
+        <p>
+          <b>Sie wollen noch extra Tischkartenplätze à 15 € kaufen ?</b> <br />
+          Dann schreiben Sie uns bitte eine Email mit ihrem Namen und Telefonnummer und der Anzahl der Plätze an casinoroyale2022@schulball-akg.at <br />
+          Wir werden Ihre Bestellung umgehend bearbeiten. < br />
+          Vielen Dank!!
+        </p>
+        <b>BEREITS BEZAHLTE BZW. ABGEHOLTE KARTEN KÖNNEN NICHT MEHR STORNIERT WERDEN !</b>
         <hr className="mt-4 border-t-2 border-skin-fg" />
         <section id="order">
           <div>
