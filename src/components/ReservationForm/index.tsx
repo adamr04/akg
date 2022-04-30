@@ -106,7 +106,7 @@ export const ReservationForm = () => {
         </p>
         <h3>WANN?</h3>
         <p>
-          Dienstag, 03. Mai - 9:30 bis 11 Uhr
+          Montag, 02. Mai - 9:30 bis 11 Uhr
         </p>
         <h3>WO?</h3>
         <p>
