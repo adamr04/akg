@@ -106,11 +106,12 @@ export const ReservationForm = () => {
         </p>
         <h3>WANN?</h3>
         <p>
-          Montag, 02. Mai - 9:30 bis 11 Uhr
+          Dienstag, 10. Mai - 9:30 bis 11 Uhr
         </p>
         <h3>WO?</h3>
         <p>
-          1. Stock im AkG, vor dem Brunnen
+          2. Stock im AkG <br />
+          An einem der Tische vor dem Lehrer*innen Zimmer
         </p>
         <section>
           <h2 className="font-sans">Preise</h2>
