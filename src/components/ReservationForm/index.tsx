@@ -110,8 +110,7 @@ export const ReservationForm = () => {
         </p>
         <h3>WO?</h3>
         <p>
-          2. Stock im AkG <br />
-          An einem der Tische vor dem Lehrer*innen Zimmer
+          1. Stock im AkG, vor dem Brunnen
         </p>
         <section>
           <h2 className="font-sans">Preise</h2>
