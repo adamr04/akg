@@ -101,16 +101,18 @@ export const ReservationForm = () => {
       <div className="form">
         <h2>Kartenverkauf und -abholung</h2>
         <p>
-          Der Kartenvorverkauf für unseren Schulball beginnt in der Schule am 20. April 2022. <br />
-          Es können hier auch die online bestellten und bezahlten Karten abgeholt werden!
+          <b> Der Online-Kartenvorverkauf für unseren Schulball endet am Dienstag, 17.05., <br />um 00:00. </b> <br />
+          Am Dienstag, 17.05., und Mittwoch, 18.05., werden die lezten Vorverkäufe in der Schule stattfinden.
+          Danach, sollte es noch Karten geben, können diese nurmehr zum Vollpreis gekauft werden!
         </p>
         <h3>WANN?</h3>
         <p>
-          Dienstag, 10. Mai - 9:30 bis 11 Uhr
+          Dienstag, 17. Mai - 9:30 bis 11 Uhr <br />
+          Mittwoch, 18. Mai - 9:30 bis 11 Uhr
         </p>
         <h3>WO?</h3>
         <p>
-          1. Stock im AkG, vor dem Brunnen
+          2. Stock im AkG, vor dem Lehrer*innenzimmer
         </p>
         <section>
           <h2 className="font-sans">Preise</h2>
