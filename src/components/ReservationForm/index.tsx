@@ -96,7 +96,8 @@ export const ReservationForm = () => {
     <React.Fragment>
       <HeaderSection
         title="Karten bestellen"
-        copy="Bestellen Sie hier Ihre Karten. Wir freuen uns auf ein tolles gemeinsames Fest!"
+        copy="Der Online-Kartenvorverkauf ist zu Ende. Aufgegebene Bestellungen werden nicht mehr verarbeitet.
+        Die letzte Vorverkauf Möglichkeit ist Dienstag, 17.05., und Mittwoch, 18.05., in der Schule, danach gibt es nur mehr Karten zu Abendpreisen."
       />
       <div className="form">
         <h2>Kartenverkauf und -abholung</h2>

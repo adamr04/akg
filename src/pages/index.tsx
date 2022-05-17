@@ -18,6 +18,10 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
         video
       >
         <p>
+          Der Online-Kartenvorverkauf ist zu Ende. Aufgegebene Bestellungen werden nicht mehr verarbeitet. 
+          Die letzte Vorverkauf Möglichkeit ist Dienstag, 17.05., und Mittwoch, 18.05., in der Schule, danach gibt es nur mehr Karten zu Abendpreisen.
+        </p>
+        <p>
           Der 43. Schulball des Akademischen Gymnasium Wien steht ganz im Motto
           CASINO ROYALE. Das Fest wird am 20. Mai 2022 im Palais Auersperg über
           die Bühne gehen. Wir laden heute auch schon alle Absolventen und 
