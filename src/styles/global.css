@@ -80,3 +80,14 @@ h2, .h2 {
 .prose {
   @apply text-current;
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#schulballTeaser {
+  text-align: center;
+}

@@ -17,23 +17,15 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
         location="Palais Auersperg Wien"
         video
       >
-        <p>
-          <b>
-            DER VORVERKAUF IST GESCHLOSSEN!
-            BESTELLTE & BEZAHLTE KARTEN LIEGEN AN DER ABENDKASSE ZUR ABHOLUNG BEREIT. 
-            RESTKARTEN VERKAUF 19 bis 22 UHR.
-          </b> 
-        </p>
+
         <p>
           Der 43. Schulball des Akademischen Gymnasium Wien steht ganz im Motto
-          CASINO ROYALE. Das Fest wird am 20. Mai 2022 im Palais Auersperg über
-          die Bühne gehen. Wir laden heute auch schon alle Absolventen und 
-          Freunde unserer Schule sehr herzlich dazu ein!
+          CASINO ROYALE. Das Fest fand am 20. Mai 2022 im Palais Auersperg statt.
+          Wir bedanken uns herzlichst bei allen Besuchern und Unterstützern und freuen uns bereits auf den nächsten Ball!
         </p>
-        <p>
-          Infos zu Kartenbestellung und Kartenabholung finden Sie auf <br />
-          "Preise & Karten".
-        </p>
+
+        <iframe width="420" height="315" class="center" src="https://www.youtube.com/embed/urJgFAeO2xw"> </iframe>
+
         <div className="action">
           <Link to="/reservation">Karten reservieren</Link>
         </div>
