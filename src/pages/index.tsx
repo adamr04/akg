@@ -30,9 +30,10 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
 
         <iframe width="420" height="315" class="center" src="https://www.youtube.com/embed/urJgFAeO2xw"> </iframe>
 
-        <div className="action">
-          <Link to="/reservation">Karten reservieren</Link>
-        </div>
+        //<div className="action">
+          //<Link to="/reservation">Karten reservieren</Link>
+        //</div>
+
       </Hero>
       <Container>
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
