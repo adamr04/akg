@@ -55,8 +55,8 @@ export const ReservationForm = () => {
     (guest) => guest.student === false
   ).length;
   const countTable = guestList.filter((guest) => guest.table === true).length;
-  const totalVVK = countStudent * 30 + countRegular * 40 + countTable * 15;
-  const totalAK = countStudent * 40 + countRegular * 50 + countTable * 15;
+  const totalVVK = countStudent * 35 + countRegular * 45 + countTable * 18;
+  const totalAK = countStudent * 45 + countRegular * 55 + countTable * 18;
   const diff = totalAK - totalVVK;
 
   const handleScroll = (event) => {
@@ -99,17 +99,18 @@ export const ReservationForm = () => {
         copy=""
       />
       <div className="form">
-        <h2>DER VORVERKAUF IST GESCHLOSSEN! BESTELLTE & BEZAHLTE KARTEN LIEGEN AN DER ABENDKASSE ZUR ABHOLUNG BEREIT. RESTKARTEN VERKAUF 19 bis 22 UHR.</h2>
+        <h2>VORVERKAUF BEGINNT AM 17. JAN 2023</h2>
         <h2>Kartenverkauf und -abholung</h2>
-        <p>
-          <b> Der Online-Kartenvorverkauf für unseren Schulball endet am Dienstag, 17.05., <br />um 00:00. </b> <br />
-          Am Dienstag, 17.05., und Mittwoch, 18.05., werden die lezten Vorverkäufe in der Schule stattfinden.
-          Danach, sollte es noch Karten geben, können diese nurmehr zum Vollpreis gekauft werden!
+        <p>ONLINE gekaufte Karten können nach den Osterferien 2023 in der Schule zu den Vorverkaufszeiten abgeholt bzw. direkt an der Abendkasse am 17. Mai 2023 entgegengenommen werden. <br></br>
+
+          Der Online Kartenvorverkauf endet am Freitag den 12. Mai 2023 !
+          Der letzte Live-Kartenvorverkaufstag im AkG findet am Dienstag den 16. Mai 2023 in der Zeit von 09:30 bis 11:00 Uhr statt.
+ 
         </p>
         <h3>WANN?</h3>
         <p>
-          Dienstag, 17. Mai - 9:30 bis 11 Uhr <br />
-          Mittwoch, 18. Mai - 9:30 bis 11 Uhr
+          Die einzelnen TERMINE für den Kartenvorverkauf im AkG werden im März 2023 bekanntgegeben. 
+          Diese finden Sie dann hier: 
         </p>
         <h3>WO?</h3>
         <p>
@@ -124,8 +125,8 @@ export const ReservationForm = () => {
               </dt>
               <dd className="mt-1 text-lg">
                 <div>
-                  € 30,– (Vorverkauf)
-                  <br />€ 40,– (Abendkassa)
+                  € 35,– (Vorverkauf)
+                  <br />€ 45,– (Abendkassa)
                 </div>
                 <div className="text-sm mt-2">
                   Schüler*in, Student*in, Lehrlinge, Zivildiener, Lehrer*in des
@@ -139,8 +140,8 @@ export const ReservationForm = () => {
               </dt>
               <dd className="mt-1 text-lg">
                 <div>
-                  € 40,– (Vorverkauf)
-                  <br />€ 50,– (Abendkassa)
+                  € 45,– (Vorverkauf)
+                  <br />€ 55,– (Abendkassa)
                 </div>
               </dd>
             </div>
@@ -148,8 +149,8 @@ export const ReservationForm = () => {
         </section>
         <h2>Tischkarten</h2>
         <p>
-          <b>Sie wollen noch extra Tischkartenplätze à 15 € kaufen ?</b> <br />
-          Dann schreiben Sie uns bitte eine Email mit ihrem Namen und Telefonnummer und der Anzahl der Plätze an casinoroyale2022@schulball-akg.at <br />
+          <b>Sie wollen noch extra Tischkartenplätze à 18 € kaufen ?</b> <br />
+          Dann schreiben Sie uns bitte eine Email mit ihrem Namen und Telefonnummer und der Anzahl der Plätze an masquerade2022@schulball-akg.at <br />
           Wir werden Ihre Bestellung umgehend bearbeiten. < br />
           Vielen Dank!!
         </p>
@@ -217,7 +218,7 @@ export const ReservationForm = () => {
                         onChange={(e) => handleCheckboxChange(e, i)}
                         className="border-2 focus:border-skin-primary"
                       />
-                      <span>Tisch Sitzplatz (€ 15,-) (optional)</span>
+                      <span>Tisch Sitzplatz (€ 18,-) (optional)</span>
                     </label>
                   </div>
                 </section>

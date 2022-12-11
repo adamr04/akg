@@ -10,21 +10,21 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Der 43. Schulball des Akademischen Gymnasiums Wien" />
+      <Seo title="Der 44. Schulball des Akademischen Gymnasiums Wien" />
       <Hero
-        title="Casino Royale"
-        date="20. Mai 2022"
-        location="Palais Auersperg Wien"
+        title="MASQUERADE"
+        date="17. Mai 2023"
+        location="Palais Ferstel"
         video
       >
 
         <p>
-          Der 43. Schulball des Akademischen Gymnasium Wien steht ganz im Motto
-          CASINO ROYALE. Das Fest fand am 20. Mai 2022 im Palais Auersperg statt.
-          Wir bedanken uns herzlichst bei allen Besuchern und Unterstützern und freuen uns bereits auf den nächsten Ball!
+          Der 44. Schulball des Akademischen Gymnasium Wien hat sich dieses Jahr einem Maskenball verschrieben.
+          Das Fest fand am 20. Mai 2022 im Palais Ferstel statt.
+          
         </p>
 
-        <iframe width="420" height="315" class="center" src="https://www.youtube.com/embed/urJgFAeO2xw"> </iframe>
+        {/* <iframe width="420" height="315" class="center" src="https://www.youtube.com/embed/urJgFAeO2xw"> </iframe> */}
 
         <div className="action">
           <Link to="/reservation">Karten reservieren</Link>
