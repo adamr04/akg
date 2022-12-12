@@ -20,7 +20,6 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
 
         <p>
           Der 44. Schulball des Akademischen Gymnasium Wien hat sich dieses Jahr einem Maskenball verschrieben.
-          Das Fest wird am 20. Mai 2022 im Palais Ferstel stattfinden.
           
         </p>
 
